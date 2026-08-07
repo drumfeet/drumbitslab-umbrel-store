@@ -16,3 +16,7 @@ Add each app in its own top-level directory. Every app needs an `umbrel-app.yml`
 4. Commit and push this store repository. umbrelOS will discover the update; apply it from the installed app's update interface.
 
 Never publish a mutable tag without its sha256 digest. Do not place promo codes, Discord webhooks, access tokens, `.env` files, screenshots, or `/data` contents in the image or this store repository. Runtime configuration stays in the app's mounted `/data` directory.
+
+## Public-store safeguards
+
+`main` is protected: store changes require a pull request, one approval, and a successful **Validate public catalog** check. The check rejects tracked `.env` files plus runtime directories such as `data/`, `local-data/`, `artifacts/`, and `screenshots/`. GitHub secret scanning and push protection provide an additional safeguard, but maintainers must still review every release diff before merging.
