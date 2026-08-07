@@ -2,7 +2,7 @@
 
 This is the owner-controlled Umbrel Community App Store for Visual Status Checker. The app is installed from a public, digest-pinned GitHub Container Registry image; the image is public so umbrelOS can pull it without GitHub credentials.
 
-Add `https://github.com/drumfeet/visual-status-checker-umbrel-store` in umbrelOS under **Community App Stores**. Updates are discovered from this repository and are applied from Umbrel's app update interface.
+Add `https://github.com/drumfeet/drumbitslab-umbrel-store` in umbrelOS under **Community App Stores**. Updates are discovered from this repository and are applied from Umbrel's app update interface.
 
 ## Releasing Visual Status Checker
 
