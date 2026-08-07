@@ -1,0 +1,22 @@
+manifestVersion: 1
+id: drumfeet-visual-status-checker
+name: Visual Status Checker
+tagline: Check one Ticketmaster show at a time
+icon: https://raw.githubusercontent.com/getumbrel/umbrel-apps/master/bitcoin/icon.svg
+category: Utilities
+version: "0.1.12"
+port: 3000
+description: >-
+  A private, local status checker with a visible browser session, conservative one-at-a-time checks, screenshots, and optional Discord alerts.
+developer: Drumfeet
+website: https://github.com/drumfeet/visualstatuscheck
+submitter: Drumfeet
+submission: https://github.com/drumfeet/visualstatuscheck
+repo: https://github.com/drumfeet/visualstatuscheck
+support: https://github.com/drumfeet/visualstatuscheck/issues
+gallery: []
+releaseNotes: "Stop monitor now cancels an in-progress check immediately, and the Discord webhook action is aligned with its field."
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
