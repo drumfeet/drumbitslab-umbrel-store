@@ -7,7 +7,7 @@ services:
       APP_PORT: 3000
 
   web:
-    image: ghcr.io/drumfeet/visual-status-checker:0.1.15@sha256:c1b108216e55a4d5be5ba02b42416d7994207b97bec181519cf5cd61adf37ad5
+    image: ghcr.io/drumfeet/visual-status-checker:0.1.18@sha256:2e6f1426a1857b5797a2e17306da4c7c6deb796d3daef12c0a29c17610c7c86d
     restart: on-failure
     stop_grace_period: 1m
     volumes:

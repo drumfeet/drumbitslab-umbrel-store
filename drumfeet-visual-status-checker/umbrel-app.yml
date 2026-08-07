@@ -4,7 +4,7 @@ name: Visual Status Checker
 tagline: Check one Ticketmaster show at a time
 icon: https://raw.githubusercontent.com/getumbrel/umbrel-apps/master/bitcoin/icon.svg
 category: Utilities
-version: "0.1.15"
+version: "0.1.18"
 port: 3000
 description: >-
   A private, local status checker with a visible browser session, conservative one-at-a-time checks, screenshots, and optional Discord alerts.
@@ -15,7 +15,7 @@ submission: https://github.com/drumfeet/visualstatuscheck
 repo: https://github.com/drumfeet/visualstatuscheck
 support: https://github.com/drumfeet/visualstatuscheck/issues
 gallery: []
-releaseNotes: "Redeploy the app-password security update so existing Umbrel installations receive the protected dashboard and live browser viewer."
+releaseNotes: "Security hardening: app password sessions expire after eight hours, failed sign-ins are rate-limited, signed-out sessions are revoked, framing is limited to Umbrel, and release packages are pinned."
 dependencies: []
 path: ""
 defaultUsername: ""
