@@ -1,4 +1,4 @@
-# Drumfeet Apps
+# drumbitsLab
 
 This is the owner-controlled Umbrel Community App Store for Visual Status Checker. The app is installed from a public, digest-pinned GitHub Container Registry image; the image is public so umbrelOS can pull it without GitHub credentials.
 
