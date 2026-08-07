@@ -1,8 +1,12 @@
 # drumbitsLab
 
-This is the owner-controlled Umbrel Community App Store for Visual Status Checker. The app is installed from a public, digest-pinned GitHub Container Registry image; the image is public so umbrelOS can pull it without GitHub credentials.
+This is the owner-controlled Umbrel Community App Store for drumbitsLab apps. It currently publishes Visual Status Checker from a public, digest-pinned GitHub Container Registry image; the image is public so umbrelOS can pull it without GitHub credentials.
 
 Add `https://github.com/drumfeet/drumbitslab-umbrel-store` in umbrelOS under **Community App Stores**. Updates are discovered from this repository and are applied from Umbrel's app update interface.
+
+## Adding an app
+
+Add each app in its own top-level directory. Every app needs an `umbrel-app.yml` manifest and a `docker-compose.yml` file that references its own public, digest-pinned multi-architecture image. Keep app IDs stable after installation so Umbrel can continue to identify and update existing apps.
 
 ## Releasing Visual Status Checker
 
