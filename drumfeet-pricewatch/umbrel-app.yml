@@ -4,7 +4,7 @@ name: Pricewatch
 tagline: Track prices and receive alerts when they fall
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-pricewatch/icon.svg
 category: Utilities
-version: "0.1.5"
+version: "0.1.6"
 port: 3217
 description: >-
   Monitor supported products and flight searches from your Umbrel node.
@@ -20,9 +20,10 @@ repo: https://github.com/drumfeet/pricewatch
 support: https://github.com/drumfeet/pricewatch/issues
 gallery: []
 releaseNotes: >-
-  Add all remaining products and start monitoring in one action. Individual additions can
-  start immediately too. Verify your saved Telegram bot and chat with Check Telegram
-  Connection, or send a test message and see its delivery status. Existing monitors,
+  Group flight monitors by route and departure date. Open Needs attention to see each
+  failed monitor, its error and a direct link to its card. Improve loading, retry,
+  Telegram settings and Google recovery feedback. Expand hidden multi-city fares
+  before comparison and report specific flight validation failures. Existing monitors,
   price history, saved settings and provider cooldowns are preserved.
 dependencies: []
 path: ""
