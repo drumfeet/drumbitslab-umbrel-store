@@ -4,7 +4,7 @@ name: Pricewatch
 tagline: Track prices and receive alerts when they fall
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-pricewatch/icon.svg
 category: Utilities
-version: "0.1.1"
+version: "0.1.3"
 port: 3217
 description: >-
   Monitor supported products and flight searches from your Umbrel node.
@@ -20,8 +20,9 @@ repo: https://github.com/drumfeet/pricewatch
 support: https://github.com/drumfeet/pricewatch/issues
 gallery: []
 releaseNotes: >-
-  Initial release for Umbrel verification with a monitoring dashboard, persistent schedules,
-  Klook and Google Flights readers, and Telegram delivery history.
+  Fix Chromium startup on Umbrel using a Pricewatch-specific AppArmor profile that permits
+  sandbox user namespaces while retaining the remaining Docker restrictions. Improve browser
+  startup diagnostics. Existing monitors and price history are preserved.
 dependencies: []
 path: ""
 defaultUsername: ""

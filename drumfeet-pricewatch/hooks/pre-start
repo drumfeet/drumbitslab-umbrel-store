@@ -1,0 +1,9 @@
+#!/bin/sh
+set -eu
+# Load only Pricewatch's named profile. Do not write system configuration files.
+profile="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)/pricewatch.apparmor"
+if [ ! -x /sbin/apparmor_parser ]; then
+  echo 'Pricewatch: AppArmor parser is unavailable; cannot load Chromium sandbox policy.' >&2
+  exit 1
+fi
+/sbin/apparmor_parser --replace --skip-cache "$profile"
