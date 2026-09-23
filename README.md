@@ -1,6 +1,6 @@
 # drumbitsLab
 
-This is the owner-controlled Umbrel Community App Store for drumbitsLab apps. It currently publishes Visual Status Checker from a public, digest-pinned GitHub Container Registry image; the image is public so umbrelOS can pull it without GitHub credentials.
+This is the owner-controlled Umbrel Community App Store for drumbitsLab apps. It publishes Visual Status Checker and Pricewatch from public, digest-pinned GitHub Container Registry images. The images are public so umbrelOS can pull them without GitHub credentials.
 
 Add `https://github.com/drumfeet/drumbitslab-umbrel-store` in umbrelOS under **Community App Stores**. Updates are discovered from this repository and are applied from Umbrel's app update interface.
 
@@ -20,3 +20,9 @@ Never publish a mutable tag without its sha256 digest. Do not place promo codes,
 ## Public-store safeguards
 
 `main` is protected: store changes require a pull request, one approval, and a successful **Validate public catalog** check. The check rejects tracked `.env` files plus runtime directories such as `data/`, `local-data/`, `artifacts/`, and `screenshots/`. GitHub secret scanning and push protection provide an additional safeguard, but maintainers must still review every release diff before merging.
+
+## Pricewatch
+
+Pricewatch tracks supported Klook packages and Google Flights searches, saves price history and schedules, and can send Telegram alerts for new lows. Its provider structure supports adding more sources. New monitors stay paused until started. Google Flights remains experimental and pauses on verification or consent blocks.
+
+The app uses port 3217 and persists its database and private Telegram settings under its own data volume. Back up that directory with the app stopped. Its Chromium process uses the bundled Playwright seccomp profile with browser sandboxing enabled. Umbrel renders `seccomp.json.template` into the app directory so profile updates follow its supported package-update workflow. The source repository is private; this catalog contains only installation metadata and static assets.

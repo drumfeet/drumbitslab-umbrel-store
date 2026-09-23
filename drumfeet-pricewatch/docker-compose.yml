@@ -1,0 +1,21 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: drumfeet-pricewatch_web_1
+      APP_PORT: 3000
+  web:
+    image: ghcr.io/drumfeet/pricewatch:0.1.1@sha256:42d67b03c62dc2578acf5c27e8207eecc3d75c6d988c505a34a697f5dcbbef9c
+    security_opt:
+      - seccomp=${APP_DATA_DIR}/seccomp.json
+    init: true
+    restart: on-failure
+    stop_grace_period: 30s
+    environment:
+      HOST: 0.0.0.0
+      PORT: 3000
+      DATA_DIR: /data
+      ALLOW_PRIVATE_HOSTS: "true"
+      ALLOWED_HOSTS: localhost,127.0.0.1,${DEVICE_DOMAIN_NAME},drumfeet-pricewatch_web_1
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+    shm_size: 256mb
