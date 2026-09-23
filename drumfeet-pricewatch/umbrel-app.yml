@@ -4,13 +4,13 @@ name: Pricewatch
 tagline: Track prices and receive alerts when they fall
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-pricewatch/icon.svg
 category: Utilities
-version: "0.1.4"
+version: "0.1.5"
 port: 3217
 description: >-
   Monitor supported products and flight searches from your Umbrel node.
   View recent prices, configure checks, and receive Telegram alerts for new lows.
   Klook and Google Flights are the first supported providers.
-  New monitors remain paused until you start them. Google Flights is experimental
+  Add and start one product or all remaining products in one action. Google Flights is experimental
   and pauses if Google requires verification or consent.
 developer: DrumbitsLab
 website: https://github.com/drumfeet/pricewatch
@@ -20,10 +20,10 @@ repo: https://github.com/drumfeet/pricewatch
 support: https://github.com/drumfeet/pricewatch/issues
 gallery: []
 releaseNotes: >-
-  Resolve Google consent or verification in a browser view inside Pricewatch. Retain a private
-  Google browser profile for later checks and retry the selected monitor once immediately
-  after recovery. Paused schedules, existing prices and other provider cooldowns are preserved.
-  Google may still require further verification; unattended access is not guaranteed.
+  Add all remaining products and start monitoring in one action. Individual additions can
+  start immediately too. Verify your saved Telegram bot and chat with Check Telegram
+  Connection, or send a test message and see its delivery status. Existing monitors,
+  price history, saved settings and provider cooldowns are preserved.
 dependencies: []
 path: ""
 defaultUsername: ""
