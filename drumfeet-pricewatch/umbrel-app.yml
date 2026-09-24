@@ -4,7 +4,7 @@ name: Pricewatch
 tagline: Track prices and receive alerts when they fall
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-pricewatch/icon.svg
 category: Utilities
-version: "0.1.8"
+version: "0.1.9"
 port: 3217
 description: >-
   Monitor supported products and flight searches from your Umbrel node.
@@ -20,11 +20,10 @@ repo: https://github.com/drumfeet/pricewatch
 support: https://github.com/drumfeet/pricewatch/issues
 gallery: []
 releaseNotes: >-
-  Compare prices in compact route groups with date-sorted rows, search and status
-  filters. Expand monitors for check controls and history. Act on failed checks
-  from Needs attention, with cooldown explanations and links to the affected monitor.
-  Add monitors and manage Telegram in separate panels. Flight alerts now show
-  readable outbound and return details with a named Google Flights link.
+  Exclude Cebu Pacific on both legs of all Cebu City flight searches, including
+  the return leg of multi-city trips. Google Flights links use the same exclusion.
+  Existing Cebu history and previous lows are preserved, with a new starting price
+  for filtered comparisons. The first filtered quote does not send an alert.
 dependencies: []
 path: ""
 defaultUsername: ""
