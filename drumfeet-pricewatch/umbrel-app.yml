@@ -4,11 +4,11 @@ name: Pricewatch
 tagline: Track prices and receive alerts when they fall
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-pricewatch/icon.svg
 category: Utilities
-version: "0.1.10"
+version: "0.1.11"
 port: 3217
 description: >-
   Monitor supported products and flight searches from your Umbrel node.
-  View recent prices, configure checks, and receive Telegram alerts for new lows.
+  View recent prices, configure checks, and receive Telegram or Viber Channel alerts for new lows.
   Klook and Google Flights are the first supported providers.
   Add and start one product or all remaining products in one action. Google Flights is experimental
   and pauses if Google requires verification or consent.
@@ -20,10 +20,11 @@ repo: https://github.com/drumfeet/pricewatch
 support: https://github.com/drumfeet/pricewatch/issues
 gallery: []
 releaseNotes: >-
-  Fix Cebu Pacific exclusion on the return leg of Cebu multi-city searches.
-  Recognize Google's airline checkbox labels and reapply the exclusion after
-  choosing an outbound flight. Preserve existing prices and history. Separate
-  the exclusion label from Details & controls.
+  Add optional Viber Channel alerts alongside Telegram, with connection checks,
+  test messages, private settings, and separate delivery status and retries.
+  Register a public HTTPS webhook when saving Viber settings. Existing monitors,
+  prices, and Telegram alerts are preserved. A database backup is created before
+  the queue upgrade; rolling back to older versions requires that backup.
 dependencies: []
 path: ""
 defaultUsername: ""
