@@ -4,7 +4,7 @@ name: Pricewatch
 tagline: Track prices and receive alerts when they fall
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-pricewatch/icon.svg
 category: Utilities
-version: "0.1.11"
+version: "0.1.12"
 port: 3217
 description: >-
   Monitor supported products and flight searches from your Umbrel node.
@@ -20,11 +20,9 @@ repo: https://github.com/drumfeet/pricewatch
 support: https://github.com/drumfeet/pricewatch/issues
 gallery: []
 releaseNotes: >-
-  Add optional Viber Channel alerts alongside Telegram, with connection checks,
-  test messages, private settings, and separate delivery status and retries.
-  Register a public HTTPS webhook when saving Viber settings. Existing monitors,
-  prices, and Telegram alerts are preserved. A database backup is created before
-  the queue upgrade; rolling back to older versions requires that backup.
+  Wait for Google Flights airline options to finish loading before failing a check.
+  Keep Cebu Pacific excluded on both legs and report which leg could not verify
+  the filter if the timeout is reached. Existing monitors and price history are preserved.
 dependencies: []
 path: ""
 defaultUsername: ""
