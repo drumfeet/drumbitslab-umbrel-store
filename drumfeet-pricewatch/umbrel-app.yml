@@ -4,12 +4,12 @@ name: Pricewatch
 tagline: Track prices and receive alerts when they fall
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-pricewatch/icon.svg
 category: Utilities
-version: "0.1.15"
+version: "0.1.16"
 port: 3217
 description: >-
   Monitor supported products and flight searches from your Umbrel node.
   View recent prices, configure checks, and receive Telegram or Viber Channel alerts for new lows.
-  Track Klook products, Google Flights searches, and the Octopus Relax energy rate.
+  Track Klook products, Google Flights searches, the Octopus Relax energy rate, and selected Uniqlo products.
   Add and start one product or all remaining products in one action. Google Flights is experimental
   and pauses if Google requires verification or consent.
 developer: DrumbitsLab
@@ -20,12 +20,11 @@ repo: https://github.com/drumfeet/pricewatch
 support: https://github.com/drumfeet/pricewatch/issues
 gallery: []
 releaseNotes: >-
-  Telegram flight summaries now use Rich Messages with route and date headings
-  and clickable flight links, fitting typical full-flight summaries in one message.
-  Choose checked monitors separately from filtered results; changing scope now
-  refreshes the preview automatically. Viber summaries keep their existing format.
-  Existing previews and queued alerts are preserved. A private database backup
-  is created before the schema upgrade.
+  Adds the Uniqlo Ultra Stretch AIRism UV Protection Full-Zip Hoodie in
+  09 BLACK, size XL. Tracks the exact available online variant and alerts for
+  new lows below PHP 1,490.00. Prices include tax and exclude shipping and
+  member-only discounts. Missing or unavailable variants preserve the last
+  verified price. Existing monitors, schedules, alerts and history are unchanged.
 dependencies: []
 path: ""
 defaultUsername: ""
