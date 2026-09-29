@@ -4,7 +4,7 @@ name: Pricewatch
 tagline: Track prices and receive alerts when they fall
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-pricewatch/icon.svg
 category: Utilities
-version: "0.1.21"
+version: "0.1.22"
 port: 3217
 description: >-
   Monitor supported products and flight searches from your Umbrel node.
@@ -20,10 +20,12 @@ repo: https://github.com/drumfeet/pricewatch
 support: https://github.com/drumfeet/pricewatch/issues
 gallery: []
 releaseNotes: >-
-  Fixes the network error that prevented Lazada's reCAPTCHA checkbox from
-  loading in the access recovery view. The recovery browser can now load the
-  required Google verification scripts and frames. Complete verification in
-  Pricewatch's Lazada session before starting the paused luggage monitor.
+  Saves flight-card and search-setting screenshots from both searches before
+  accepting a first flight baseline or new low. History can display evidence
+  for the current and previous lows, plus recent rejected readings. Failed or
+  incomplete evidence leaves accepted prices unchanged. Images stay private
+  in the app and are not attached to alerts. The database is backed up before
+  the schema upgrade. Historical prices and monitor settings are preserved.
 dependencies: []
 path: ""
 defaultUsername: ""
