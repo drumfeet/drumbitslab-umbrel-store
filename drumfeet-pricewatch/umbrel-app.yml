@@ -4,7 +4,7 @@ name: Pricewatch
 tagline: Track prices and receive alerts when they fall
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-pricewatch/icon.svg
 category: Utilities
-version: "0.1.20"
+version: "0.1.21"
 port: 3217
 description: >-
   Monitor supported products and flight searches from your Umbrel node.
@@ -20,10 +20,10 @@ repo: https://github.com/drumfeet/pricewatch
 support: https://github.com/drumfeet/pricewatch/issues
 gallery: []
 releaseNotes: >-
-  Fixes Lazada recovery when its verification page is nested below the luggage
-  product URL or begins with a doubled slash. Recovery remains restricted to
-  the configured product and Lazada verification routes. Flight confirmation,
-  saved prices and paused monitor settings are unchanged.
+  Fixes the network error that prevented Lazada's reCAPTCHA checkbox from
+  loading in the access recovery view. The recovery browser can now load the
+  required Google verification scripts and frames. Complete verification in
+  Pricewatch's Lazada session before starting the paused luggage monitor.
 dependencies: []
 path: ""
 defaultUsername: ""
