@@ -4,7 +4,7 @@ services:
       APP_HOST: drumfeet-pricewatch_web_1
       APP_PORT: 3000
   web:
-    image: ghcr.io/drumfeet/pricewatch:0.1.21@sha256:376086cc10f3d18c718695af061529b2041dfb59496c8d83f48788f8f982df33
+    image: ghcr.io/drumfeet/pricewatch:0.1.22@sha256:5288f73b30e35c5d45dab6d20775a8dbcac254c125aa2192a1c5009c3c56a9d2
     security_opt:
       - apparmor=drumfeet-pricewatch
       - seccomp=${APP_DATA_DIR}/seccomp.json
