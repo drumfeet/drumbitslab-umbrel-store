@@ -1,0 +1,28 @@
+manifestVersion: 1
+id: drumfeet-atlas-almanac-collector
+name: Atlas Almanac Collector
+tagline: Collect and publish data for Atlas Almanac
+icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-atlas-almanac-collector/icon.svg
+category: Utilities
+version: "0.1.0"
+port: 3221
+description: >-
+  Collect Philippine bond yields from TradingView and publish validated snapshots to Atlas Almanac.
+  Runs at 21:20 UTC on weekdays, with bounded retries and publication checks.
+  Keeps credentials on your Umbrel and shows connection, schedule and publication status.
+  Requires the owner's configured private Tailscale HTTPS route and a repository-scoped GitHub token.
+  Scheduling starts paused. Telegram and Viber delivery remains in Atlas Almanac.
+developer: DrumbitsLab
+website: https://github.com/drumfeet/atlas-almanac-collector
+submitter: DrumbitsLab
+submission: https://github.com/drumfeet/atlas-almanac-collector
+repo: https://github.com/drumfeet/atlas-almanac-collector
+support: https://github.com/drumfeet/atlas-almanac-collector/issues
+gallery: []
+releaseNotes: >-
+  First release with persistent TradingView authorization, six-tenor bond collection,
+  scheduled publication, restart recovery and a protected status dashboard.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
