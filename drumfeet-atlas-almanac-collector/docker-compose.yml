@@ -4,7 +4,7 @@ services:
       APP_HOST: drumfeet-atlas-almanac-collector_web_1
       APP_PORT: 3220
   data_init:
-    image: ghcr.io/drumfeet/atlas-almanac-collector:0.1.0@sha256:883fbaaf54faa8fae629904e0dfc62edf66cd845553c67bc1ec8a99afa082708
+    image: ghcr.io/drumfeet/atlas-almanac-collector:0.1.1@sha256:44363f24e6abb0d8e9233ab9859c90cdfe4e4e7b5dfccd64ecd8ad818f85cf2b
     user: "0:0"
     restart: "no"
     entrypoint: ["sh", "-c", "chown 1000:1000 /data && chmod 700 /data"]
@@ -15,7 +15,7 @@ services:
     cap_add: [CHOWN, FOWNER, DAC_OVERRIDE]
     security_opt: [no-new-privileges:true]
   web:
-    image: ghcr.io/drumfeet/atlas-almanac-collector:0.1.0@sha256:883fbaaf54faa8fae629904e0dfc62edf66cd845553c67bc1ec8a99afa082708
+    image: ghcr.io/drumfeet/atlas-almanac-collector:0.1.1@sha256:44363f24e6abb0d8e9233ab9859c90cdfe4e4e7b5dfccd64ecd8ad818f85cf2b
     depends_on:
       data_init:
         condition: service_completed_successfully
@@ -23,9 +23,23 @@ services:
     restart: on-failure
     stop_grace_period: 30s
     environment:
-      PUBLIC_ORIGIN: https://umbrel-1.taile58726.ts.net:8443
+      PUBLIC_ORIGIN: https://collector.fizzlesmusic.com
     volumes:
       - ${APP_DATA_DIR}/data:/data
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+  tunnel:
+    image: cloudflare/cloudflared:2026.9.3@sha256:072c067d25ccbe61d46e18f0d0723255f2bb5304f7317caa95b27031520ff92c
+    user: "1000:1000"
+    command: ["tunnel", "--no-autoupdate", "--loglevel", "warn", "run", "--token-file", "/tunnel/token"]
+    restart: on-failure
+    stop_grace_period: 30s
+    depends_on:
+      web:
+        condition: service_healthy
+    volumes:
+      - ${APP_DATA_DIR}/tunnel:/tunnel:ro
     read_only: true
     cap_drop: [ALL]
     security_opt: [no-new-privileges:true]
