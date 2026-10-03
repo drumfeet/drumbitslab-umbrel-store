@@ -4,7 +4,7 @@ services:
       APP_HOST: drumfeet-pricewatch_web_1
       APP_PORT: 3000
   web:
-    image: ghcr.io/drumfeet/pricewatch:0.1.27@sha256:4ac8bb9b1510927bd4ac90865dfc06c949f97e96c292fa6ce48b6fd13b1f04c1
+    image: ghcr.io/drumfeet/pricewatch:0.1.28@sha256:ed562beb9e7e74488ad334b9beff368bd6e4fb45557c9540ec756ae09e0a4cb7
     security_opt:
       - apparmor=drumfeet-pricewatch
       - seccomp=${APP_DATA_DIR}/seccomp.json
@@ -17,8 +17,8 @@ services:
       DATA_DIR: /data
       ALLOW_PRIVATE_HOSTS: "true"
       LAZADA_HEADED_EXPERIMENT: "1"
-      LAZADA_EXPERIMENT_REVISION: diagnostic-price-evidence-v1
-      LAZADA_EXPERIMENT_SEED_REVISION: legacy
+      LAZADA_EXPERIMENT_REVISION: diagnostic-price-evidence-v2
+      LAZADA_EXPERIMENT_SEED_REVISION: diagnostic-price-evidence-v1
       ALLOWED_HOSTS: localhost,127.0.0.1,${DEVICE_DOMAIN_NAME},drumfeet-pricewatch_web_1
     volumes:
       - ${APP_DATA_DIR}/data:/data
