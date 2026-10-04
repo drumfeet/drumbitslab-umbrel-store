@@ -4,7 +4,7 @@ name: Pricewatch
 tagline: Track prices and receive alerts when they fall
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-pricewatch/icon.svg
 category: Utilities
-version: "0.1.30"
+version: "0.1.31"
 port: 3217
 description: >-
   Monitor supported products and flight searches from your Umbrel node.
@@ -20,7 +20,7 @@ repo: https://github.com/drumfeet/pricewatch
 support: https://github.com/drumfeet/pricewatch/issues
 gallery: []
 releaseNotes: >-
-  Validates Lazada's current sale price from the exact selected SKU's live page data and requires agreement with the visible PHP price. Original prices remain reference evidence. Missing, conflicting, unavailable or ambiguous product data still fails validation. Saved prices, alert settings and paused schedules are preserved.
+  Adds the qualified browser to normal Lazada recovery and price checks. Recovery uses a private desktop and verifies the exact product before retrying. A separate verification control checks access without saving prices or sending alerts, including after restart. Existing prices, credentials, alert settings and paused schedules are preserved.
 dependencies: []
 path: ""
 defaultUsername: ""
