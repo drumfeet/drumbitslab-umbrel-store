@@ -4,7 +4,7 @@ name: Atlas Almanac Collector
 tagline: Collect and publish data for Atlas Almanac
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-atlas-almanac-collector/icon.svg
 category: Utilities
-version: "0.1.1"
+version: "0.1.2"
 port: 3221
 description: >-
   Collect Philippine bond yields from TradingView and publish validated snapshots to Atlas Almanac.
@@ -20,8 +20,9 @@ repo: https://github.com/drumfeet/atlas-almanac-collector
 support: https://github.com/drumfeet/atlas-almanac-collector/issues
 gallery: []
 releaseNotes: >-
-  Adds permanent Cloudflare Tunnel access with the existing dashboard password.
-  Reconnect TradingView after the callback address changes. Collection remains paused during migration.
+  Retries collection every ten minutes through 22:50 UTC, with up to ten attempts.
+  Published snapshots can finish website verification before midnight.
+  Shows clearer errors and retry status. Private failure notices are handled by Atlas.
 dependencies: []
 path: ""
 defaultUsername: ""
