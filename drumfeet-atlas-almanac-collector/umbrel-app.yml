@@ -4,7 +4,7 @@ name: Atlas Almanac Collector
 tagline: Collect and publish data for Atlas Almanac
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-atlas-almanac-collector/icon.svg
 category: Utilities
-version: "0.1.2"
+version: "0.1.3"
 port: 3221
 description: >-
   Collect Philippine bond yields from TradingView and publish validated snapshots to Atlas Almanac.
@@ -20,9 +20,9 @@ repo: https://github.com/drumfeet/atlas-almanac-collector
 support: https://github.com/drumfeet/atlas-almanac-collector/issues
 gallery: []
 releaseNotes: >-
-  Retries collection every ten minutes through 22:50 UTC, with up to ten attempts.
-  Published snapshots can finish website verification before midnight.
-  Shows clearer errors and retry status. Private failure notices are handled by Atlas.
+  Records request timing, HTTP status, timeout phase and network error codes for collection checks.
+  Distinguishes initialization, notification and history failures without exposing credentials or source messages.
+  Removes the retry promise from timeout errors after the final attempt.
 dependencies: []
 path: ""
 defaultUsername: ""
