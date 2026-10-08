@@ -4,7 +4,7 @@ name: Pricewatch
 tagline: Track prices and receive alerts when they fall
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-pricewatch/icon.svg
 category: Utilities
-version: "0.1.37"
+version: "0.1.38"
 port: 3217
 description: >-
   Monitor supported products and flight searches from your Umbrel node.
@@ -20,8 +20,8 @@ repo: https://github.com/drumfeet/pricewatch
 support: https://github.com/drumfeet/pricewatch/issues
 gallery: []
 releaseNotes: >-
-  Validates saved state before each write so invalid updates leave the previous state intact.
-  Screenshot changes roll back with rejected updates. Existing monitors, saved prices,
+  Adds safe, bounded failure logs for price checks, saved settings, browser cleanup and alert
+  delivery. Request IDs help identify unexpected server errors. Existing monitors, prices,
   screenshots and alert settings are preserved. No database migration is required.
 dependencies: []
 path: ""
