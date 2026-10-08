@@ -4,7 +4,7 @@ name: Atlas Almanac Collector
 tagline: Collect and publish data for Atlas Almanac
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-atlas-almanac-collector/icon.svg
 category: Utilities
-version: "0.1.4"
+version: "0.1.5"
 port: 3221
 description: >-
   Collect Philippine bond yields from TradingView and publish validated snapshots to Atlas Almanac.
@@ -20,9 +20,9 @@ repo: https://github.com/drumfeet/atlas-almanac-collector
 support: https://github.com/drumfeet/atlas-almanac-collector/issues
 gallery: []
 releaseNotes: >-
-  Allows 30 seconds per request and up to 20 collection attempts at five-minute UTC slots through 22:55.
-  Respects Retry-After on temporary HTTP failures without extending the 23:00 collection cutoff or four-minute attempt limit.
-  Preserves publication history and keeps completed or failed sessions terminal.
+  Allows 60 seconds for bond histories, 30 seconds for other requests and eight minutes per attempt.
+  Extends collection to 23:45 UTC with up to 29 five-minute retry slots through 23:40.
+  Skips missed slots, prevents overlapping runs and respects provider retry delays within the deadline.
 dependencies: []
 path: ""
 defaultUsername: ""
