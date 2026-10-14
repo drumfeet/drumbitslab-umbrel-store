@@ -4,7 +4,7 @@ name: Atlas Almanac Collector
 tagline: Collect and publish data for Atlas Almanac
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-atlas-almanac-collector/icon.svg
 category: Utilities
-version: "0.1.5"
+version: "0.2.0"
 port: 3221
 description: >-
   Collect Philippine bond yields from TradingView and publish validated snapshots to Atlas Almanac.
@@ -20,9 +20,9 @@ repo: https://github.com/drumfeet/atlas-almanac-collector
 support: https://github.com/drumfeet/atlas-almanac-collector/issues
 gallery: []
 releaseNotes: >-
-  Allows 60 seconds for bond histories, 30 seconds for other requests and eight minutes per attempt.
-  Extends collection to 23:45 UTC with up to 29 five-minute retry slots through 23:40.
-  Skips missed slots, prevents overlapping runs and respects provider retry delays within the deadline.
+  Adds daily stock history for 281 PSE symbols at 08:00 UTC on weekdays.
+  Archives stock bars, bond observations and company metrics to private R2 storage with checksums and versioned manifests.
+  Keeps stock scheduling paused until configured. Preserves pending uploads and stops at the shared storage limit.
 dependencies: []
 path: ""
 defaultUsername: ""
