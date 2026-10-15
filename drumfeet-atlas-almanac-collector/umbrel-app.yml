@@ -4,7 +4,7 @@ name: Atlas Almanac Collector
 tagline: Collect and publish data for Atlas Almanac
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-atlas-almanac-collector/icon.svg
 category: Utilities
-version: "0.2.4"
+version: "0.2.5"
 port: 3221
 description: >-
   Collect Philippine bond yields from TradingView and publish validated snapshots to Atlas Almanac.
@@ -20,9 +20,9 @@ repo: https://github.com/drumfeet/atlas-almanac-collector
 support: https://github.com/drumfeet/atlas-almanac-collector/issues
 gallery: []
 releaseNotes: >-
-  Validates TradingView responses, GitHub revisions, R2 settings and saved stock checkpoints before use.
-  Rejects malformed archive manifests, partitions and storage counters before they can affect publication.
-  Includes the canonical Atlas archive validation fixes and regression coverage.
+  Archives available company metrics when TradingView explicitly reports missing symbols.
+  Shows archived, unavailable and unprocessed company counts separately.
+  Adds recovery of a saved company response without requesting new provider data.
   Preserves existing schedules, credentials, history and archive storage limits.
 dependencies: []
 path: ""
