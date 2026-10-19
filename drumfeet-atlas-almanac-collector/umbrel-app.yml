@@ -4,9 +4,10 @@ name: Atlas Almanac Collector
 tagline: Collect and publish data for Atlas Almanac
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-atlas-almanac-collector/icon.svg
 category: Utilities
-version: "0.4.1"
+version: "0.4.2"
 port: 3221
 description: >-
+  Requires an AMD64 Umbrel device.
   Collect Philippine bond yields from TradingView and publish validated snapshots to Atlas Almanac.
   Runs at 21:20 UTC on weekdays, with bounded retries and publication checks.
   Keeps credentials on your Umbrel and shows connection, schedule and publication status.
@@ -20,9 +21,9 @@ repo: https://github.com/drumfeet/atlas-almanac-collector
 support: https://github.com/drumfeet/atlas-almanac-collector/issues
 gallery: []
 releaseNotes: >-
-  Adds an authenticated manual market-ingestion action using the existing saved pipeline.
-  Preserves schedules and caches, rejects duplicate sessions, and verifies current-session data before publication.
-  Allows a bounded StockAnalysis fallback phase for manual runs after the scheduled window.
+  Fixes market ingestion stopping after Atlas Alerts accepts a new daily report.
+  Preserves HTTP 202 acceptance receipts and supports recovery of saved captures without refetching completed inputs.
+  Includes bounded caching of verified archive reads. Schedules, credentials and source selection are retained.
 dependencies: []
 path: ""
 defaultUsername: ""

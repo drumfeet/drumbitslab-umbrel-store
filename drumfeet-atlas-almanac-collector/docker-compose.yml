@@ -4,7 +4,7 @@ services:
       APP_HOST: drumfeet-atlas-almanac-collector_web_1
       APP_PORT: 3220
   data_init:
-    image: ghcr.io/drumfeet/atlas-almanac-collector:0.4.1@sha256:b9d538d64df71f5992fa0aa5fc59fbf97b16209346d45dc7fe6215bb5a11ca71
+    image: ghcr.io/drumfeet/atlas-almanac-collector:0.4.2@sha256:113ebc2274ecc369d39a24a6335ddd540d754a5157f5571a715686838b83b9c5
     user: "0:0"
     restart: "no"
     entrypoint: ["sh", "-c", "chown 1000:1000 /data && chmod 700 /data"]
@@ -15,7 +15,7 @@ services:
     cap_add: [CHOWN, FOWNER, DAC_OVERRIDE]
     security_opt: [no-new-privileges:true]
   web:
-    image: ghcr.io/drumfeet/atlas-almanac-collector:0.4.1@sha256:b9d538d64df71f5992fa0aa5fc59fbf97b16209346d45dc7fe6215bb5a11ca71
+    image: ghcr.io/drumfeet/atlas-almanac-collector:0.4.2@sha256:113ebc2274ecc369d39a24a6335ddd540d754a5157f5571a715686838b83b9c5
     depends_on:
       data_init:
         condition: service_completed_successfully
