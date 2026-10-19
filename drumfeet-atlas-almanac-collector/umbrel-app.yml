@@ -4,7 +4,7 @@ name: Atlas Almanac Collector
 tagline: Collect and publish data for Atlas Almanac
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-atlas-almanac-collector/icon.svg
 category: Utilities
-version: "0.4.2"
+version: "0.4.3"
 port: 3221
 description: >-
   Requires an AMD64 Umbrel device.
@@ -21,9 +21,8 @@ repo: https://github.com/drumfeet/atlas-almanac-collector
 support: https://github.com/drumfeet/atlas-almanac-collector/issues
 gallery: []
 releaseNotes: >-
-  Fixes market ingestion stopping after Atlas Alerts accepts a new daily report.
-  Preserves HTTP 202 acceptance receipts and supports recovery of saved captures without refetching completed inputs.
-  Includes bounded caching of verified archive reads. Schedules, credentials and source selection are retained.
+  Keeps the existing quote fallback when TradingView's calculated daily change disagrees with the reference quote.
+  A reconciled StockAnalysis quote can still qualify. Preserves archive observations, schedules and saved publication receipts.
 dependencies: []
 path: ""
 defaultUsername: ""
