@@ -4,7 +4,7 @@ name: Atlas Almanac Collector
 tagline: Collect and publish data for Atlas Almanac
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-atlas-almanac-collector/icon.svg
 category: Utilities
-version: "0.4.4"
+version: "0.4.5"
 port: 3221
 description: >-
   Requires an AMD64 Umbrel device.
@@ -21,8 +21,9 @@ repo: https://github.com/drumfeet/atlas-almanac-collector
 support: https://github.com/drumfeet/atlas-almanac-collector/issues
 gallery: []
 releaseNotes: >-
-  Retries temporary archive timeouts using the saved market capture, with bounded backoff and verified write readback.
-  Keeps safe failure details after recovery to help diagnose timeouts. Preserves schedules, credentials and publication receipts.
+  Adds private, read-only Collector status and run diagnostics through Atlas MCP.
+  Reports snapshot freshness, safe failure details, publication evidence and alert acceptance without exposing credentials.
+  Keeps collection schedules and recovery controls in the Collector dashboard.
 dependencies: []
 path: ""
 defaultUsername: ""
