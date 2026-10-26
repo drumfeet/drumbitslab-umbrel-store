@@ -23,6 +23,7 @@ class PublicCatalogTests(unittest.TestCase):
             if not key.startswith("GIT_")
         }
         self.env["GIT_CONFIG_NOSYSTEM"] = "1"
+        self.env["GIT_CEILING_DIRECTORIES"] = str(self.root.resolve())
         self.git("init", "--quiet")
 
     def git(self, *arguments):
@@ -113,6 +114,17 @@ class PublicCatalogTests(unittest.TestCase):
         result = self.guard(cwd=outside)
         self.assertNotEqual(result.returncode, 0)
         self.assertNotIn("check passed", result.stdout)
+
+    def test_parent_checkout_cannot_change_fixture_results(self):
+        temporary = self.repo / "temporary"
+        temporary.mkdir()
+        result = subprocess.run(
+            [sys.executable, "-B", str(Path(__file__).resolve()),
+             "PublicCatalogTests.test_fails_when_invoked_outside_a_git_repository", "-v"],
+            cwd=self.repo, env={**os.environ, "TMPDIR": str(temporary)},
+            capture_output=True, text=True,
+        )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
     def test_fails_when_git_cannot_read_the_index(self):
         invalid_index = self.root / "invalid-index"
