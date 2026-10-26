@@ -21,6 +21,8 @@ Never publish a mutable tag without its sha256 digest. Do not place promo codes,
 
 `main` is protected: store changes require a pull request, one approval, and a successful **Validate public catalog** check. The check rejects tracked `.env` files plus runtime directories such as `data/`, `local-data/`, `artifacts/`, and `screenshots/`. GitHub secret scanning and push protection provide an additional safeguard, but maintainers must still review every release diff before merging.
 
+Run `./scripts/verify-public-catalog.sh` and `python3 -B -m unittest discover -s tests -p 'test_*.py' -v` to check the catalog and its guard locally. The tests use disposable Git indexes and require only Python 3 and Git. Fixtures force-stage synthetic files and bound Git discovery to their temporary root, so global ignore rules and ancestor checkouts cannot change the results. They cover allowed sources, blocked runtime files, filenames containing spaces or newlines, and Git failures. The guard refuses publication if it cannot list tracked files.
+
 ## Pricewatch
 
 Pricewatch tracks supported Klook packages and Google Flights searches, saves price history and schedules, and can send Telegram alerts for new lows. Its provider structure supports adding more sources. New monitors stay paused until started. Google Flights remains experimental and pauses on verification or consent blocks.

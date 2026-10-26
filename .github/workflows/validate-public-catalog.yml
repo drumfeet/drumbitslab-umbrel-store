@@ -15,3 +15,5 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - run: ./scripts/verify-public-catalog.sh
+      - name: Test catalog publication guard
+        run: python3 -B -m unittest discover -s tests -p 'test_*.py' -v
