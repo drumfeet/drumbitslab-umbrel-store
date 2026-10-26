@@ -4,7 +4,7 @@ name: Atlas Almanac Collector
 tagline: Collect and publish data for Atlas Almanac
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-atlas-almanac-collector/icon.svg
 category: Utilities
-version: "0.4.6"
+version: "0.4.7"
 port: 3221
 description: >-
   Requires an AMD64 Umbrel device.
@@ -21,9 +21,7 @@ repo: https://github.com/drumfeet/atlas-almanac-collector
 support: https://github.com/drumfeet/atlas-almanac-collector/issues
 gallery: []
 releaseNotes: >-
-  Reclaims disposable caches from older completed market runs before local storage fills.
-  Preserves failed captures, publication receipts and the caches needed for the next run.
-  Shows local storage warnings and rejects mismatched sessions before daily publication or alerts.
+  Updates the Cloudflare Tunnel connector to address compromised certificate authorities.
 dependencies: []
 path: ""
 defaultUsername: ""
