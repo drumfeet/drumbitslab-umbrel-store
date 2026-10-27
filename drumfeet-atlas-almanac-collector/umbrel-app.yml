@@ -4,7 +4,7 @@ name: Atlas Almanac Collector
 tagline: Collect and publish data for Atlas Almanac
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-atlas-almanac-collector/icon.svg
 category: Utilities
-version: "0.4.7"
+version: "0.4.8"
 port: 3221
 description: >-
   Requires an AMD64 Umbrel device.
@@ -21,7 +21,8 @@ repo: https://github.com/drumfeet/atlas-almanac-collector
 support: https://github.com/drumfeet/atlas-almanac-collector/issues
 gallery: []
 releaseNotes: >-
-  Updates the Cloudflare Tunnel connector to address compromised certificate authorities.
+  Updates the Node runtime so a malformed provider response does not stop the collector.
+  Preserves saved connections, schedules and collection history.
 dependencies: []
 path: ""
 defaultUsername: ""
