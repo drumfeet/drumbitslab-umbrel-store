@@ -17,6 +17,14 @@ Add each app in its own top-level directory. Every app needs an `umbrel-app.yml`
 
 Never publish a mutable tag without its sha256 digest. Do not place promo codes, Discord webhooks, access tokens, `.env` files, screenshots, or `/data` contents in the image or this store repository. Runtime configuration stays in the app's mounted `/data` directory.
 
+## Visual Status Checker release record
+
+| Version | Image published | Source commit | Published image digest | Architecture |
+| --- | --- | --- | --- | --- |
+| `0.1.19` | 2026-10-29 | [`e461b03`](https://github.com/drumfeet/visualstatuscheck/commit/e461b03c42b36121aec2c7141a0dfb68c51596ff) | `sha256:9d3561f720c0cdc923d116b3be8e5254bb507e315188921701eca7ff9b261c3b` | `linux/amd64` |
+
+Tag: [`v0.1.19`](https://github.com/drumfeet/visualstatuscheck/tree/v0.1.19). The [AMD64 build and startup check](https://github.com/drumfeet/visualstatuscheck/actions/runs/40874431380) and [image publication](https://github.com/drumfeet/visualstatuscheck/actions/runs/40875400616) passed. Anonymous registry access, the published digest, and the AMD64-only image platform were verified. No Visual Status Checker app was installed on the owner's Umbrel device at release time, so no installed-app smoke test was performed.
+
 ## Public-store safeguards
 
 `main` is protected: store changes require a pull request, one approval, and a successful **Validate public catalog** check. The check rejects tracked `.env` files plus runtime directories such as `data/`, `local-data/`, `artifacts/`, and `screenshots/`. GitHub secret scanning and push protection provide an additional safeguard, but maintainers must still review every release diff before merging.
