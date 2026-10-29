@@ -4,7 +4,7 @@ name: Atlas Almanac Collector
 tagline: Collect and publish data for Atlas Almanac
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-atlas-almanac-collector/icon.svg
 category: Utilities
-version: "0.4.10"
+version: "0.5.0"
 port: 3221
 description: >-
   Requires an AMD64 Umbrel device.
@@ -21,10 +21,11 @@ repo: https://github.com/drumfeet/atlas-almanac-collector
 support: https://github.com/drumfeet/atlas-almanac-collector/issues
 gallery: []
 releaseNotes: >-
-  Recognizes TradingView's explicit empty-window response as unavailable
-  for that stock request, avoiding unnecessary retries. Retains safe failure
-  evidence and preserves checkpoints, request windows, source selection
-  and saved schedules. Historical outcomes remain unchanged.
+  Adds GCASH and LTL to the directory and archive universe and updates
+  FMETF to AETF using verified PSE identities. New history starts at the
+  listing or rename date. Unavailable quotes remain visible without
+  invented prices. Preserves historical identities, saved runs, credentials,
+  schedules and receipts. Requires the compatible Atlas snapshot reader.
 dependencies: []
 path: ""
 defaultUsername: ""
