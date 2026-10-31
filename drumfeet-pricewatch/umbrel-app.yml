@@ -4,9 +4,10 @@ name: Pricewatch
 tagline: Track prices and receive alerts when they fall
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-pricewatch/icon.svg
 category: Utilities
-version: "0.1.41"
+version: "0.1.42"
 port: 3217
 description: >-
+  Requires an AMD64 Umbrel device.
   Monitor supported products and flight searches from your Umbrel node.
   View recent prices, configure checks, and receive Telegram or Viber Channel alerts for new lows.
   Track Klook products, Google Flights searches, the Octopus Relax energy rate, and selected Uniqlo products.
@@ -20,9 +21,9 @@ repo: https://github.com/drumfeet/pricewatch
 support: https://github.com/drumfeet/pricewatch/issues
 gallery: []
 releaseNotes: >-
-  Updates operating guides and release validation. Existing monitors, prices, alert
-  settings, browser recovery records and privacy controls are preserved. There is no
-  database migration; automatic cleanup remains off unless you have enabled it.
+  Fixes Telegram alert retries when a rate-limit response has an unreadable body.
+  Pricewatch waits at least 60 seconds and retries within its three-attempt limit.
+  Existing monitors, prices and settings are preserved. There is no database migration.
 dependencies: []
 path: ""
 defaultUsername: ""
