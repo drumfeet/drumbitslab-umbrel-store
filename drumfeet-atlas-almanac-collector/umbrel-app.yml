@@ -4,7 +4,7 @@ name: Atlas Almanac Collector
 tagline: Collect and publish data for Atlas Almanac
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-atlas-almanac-collector/icon.svg
 category: Utilities
-version: "0.5.0"
+version: "0.5.1"
 port: 3221
 description: >-
   Requires an AMD64 Umbrel device.
@@ -21,11 +21,9 @@ repo: https://github.com/drumfeet/atlas-almanac-collector
 support: https://github.com/drumfeet/atlas-almanac-collector/issues
 gallery: []
 releaseNotes: >-
-  Adds GCASH and LTL to the directory and archive universe and updates
-  FMETF to AETF using verified PSE identities. New history starts at the
-  listing or rename date. Unavailable quotes remain visible without
-  invented prices. Preserves historical identities, saved runs, credentials,
-  schedules and receipts. Requires the compatible Atlas snapshot reader.
+  Reduces repeated storage scans when market runs have no disposable cache.
+  Keeps fresh usage checks before cache deletion and preserves storage limits,
+  protected captures, publication receipts, credentials and schedules.
 dependencies: []
 path: ""
 defaultUsername: ""
