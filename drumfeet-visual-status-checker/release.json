@@ -1,0 +1,20 @@
+{
+  "image": "ghcr.io/drumfeet/visual-status-checker:0.1.20@sha256:aa620b4547bdf1a536b70a22bbf8a1d1a9921a9f4f63c3416a39801ca9262043",
+  "tag": "0.1.20",
+  "digest": "sha256:aa620b4547bdf1a536b70a22bbf8a1d1a9921a9f4f63c3416a39801ca9262043",
+  "anonymous_pull": true,
+  "registry_tag_digest_matches_artifact": true,
+  "manifest_bytes_digest_verified": true,
+  "platforms": [
+    {
+      "os": "linux",
+      "architecture": "amd64"
+    }
+  ],
+  "source_commit": "239cb3b204e7a7e2fe6f10cf20478a0884c7c186",
+  "publish_run": 41548747288,
+  "validated_source_run": 41547684546,
+  "source_tag": "v0.1.20",
+  "source_pull_request": "https://github.com/drumfeet/visualstatuscheck/pull/13",
+  "rollback_image": "ghcr.io/drumfeet/visual-status-checker:0.1.19@sha256:9d3561f720c0cdc923d116b3be8e5254bb507e315188921701eca7ff9b261c3b"
+}
