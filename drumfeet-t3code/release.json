@@ -1,0 +1,10 @@
+{
+  "version": "0.1.0",
+  "sourceCommit": "9fc904835dc78338e5ad5e0d536931d4004f230d",
+  "sourceTag": "v0.1.0",
+  "image": "ghcr.io/drumfeet/t3code-umbrel:0.1.0@sha256:563e636bb1b9f3bbfafe118d418eeae746a1d75da07ccc306078e763670d6209",
+  "platforms": [
+    "linux/amd64"
+  ],
+  "releaseWorkflow": "https://github.com/drumfeet/t3code-umbrel/actions/runs/42307307750"
+}

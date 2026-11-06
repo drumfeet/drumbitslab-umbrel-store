@@ -1,0 +1,22 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: drumfeet-t3code_server_1
+      APP_PORT: 3000
+  server:
+    image: ghcr.io/drumfeet/t3code-umbrel:0.1.0@sha256:563e636bb1b9f3bbfafe118d418eeae746a1d75da07ccc306078e763670d6209
+    restart: on-failure
+    stop_grace_period: 45s
+    ports:
+      - "3773:3773"
+    environment:
+      SETUP_HOSTS: ${DEVICE_DOMAIN_NAME},${DEVICE_HOSTNAME},localhost,127.0.0.1
+      T3_LAN_ORIGIN: http://${DEVICE_DOMAIN_NAME}:3773
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+    shm_size: 256mb
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "3"
