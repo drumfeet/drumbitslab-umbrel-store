@@ -1,0 +1,29 @@
+manifestVersion: 1
+id: drumfeet-t3code
+name: T3 Code Nightly
+icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-t3code/icon.svg
+tagline: Run coding agents on Umbrel from your Mac
+category: Developer Tools
+version: "0.1.0"
+port: 3218
+description: >-
+  AMD64 only. Run the official T3 Code nightly server on Umbrel and connect
+  from T3 Code Desktop. The setup page creates local pairing links and walks
+  you through T3 Connect sign-in for access away from home. Bring your own
+  coding-provider accounts. Nightly server updates are applied from T3 Code's
+  update controls and persist across container restarts. Updates interrupt
+  active work. The app stores projects and credentials in its own data directory.
+developer: DrumbitsLab
+website: https://t3.codes
+submitter: DrumbitsLab
+submission: https://github.com/drumfeet/t3code-umbrel
+repo: https://github.com/drumfeet/t3code-umbrel
+support: https://github.com/drumfeet/t3code-umbrel/issues
+gallery: []
+releaseNotes: >-
+  Initial AMD64 package with local desktop pairing, T3 Connect setup and
+  persistent managed nightly updates. Complete account approval in your browser.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
