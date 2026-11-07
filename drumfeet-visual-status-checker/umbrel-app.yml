@@ -4,9 +4,10 @@ name: Visual Status Checker
 tagline: Check one Ticketmaster show at a time
 icon: https://raw.githubusercontent.com/getumbrel/umbrel-apps/master/bitcoin/icon.svg
 category: Utilities
-version: "0.1.20"
+version: "0.1.21"
 port: 3000
 description: >-
+  Requires an AMD64 Umbrel device.
   A private, local status checker with a visible browser session, conservative one-at-a-time checks, screenshots, and optional Discord alerts.
 developer: Drumfeet
 website: https://github.com/drumfeet/visualstatuscheck
@@ -15,7 +16,13 @@ submission: https://github.com/drumfeet/visualstatuscheck
 repo: https://github.com/drumfeet/visualstatuscheck
 support: https://github.com/drumfeet/visualstatuscheck/issues
 gallery: []
-releaseNotes: "Update browser tooling and run checks with stable Chrome and its process sandbox enabled."
+releaseNotes: >-
+  Moves show presets and installation frame origins into private runtime configuration.
+  Export and restore presets before upgrading an existing installation. Preserves saved
+  booking links, authentication, webhook settings and history. Empty installations disable
+  monitoring and booking-link editing. Chrome sandboxing remains enabled. Migration
+  instructions:
+  https://github.com/drumfeet/drumbitslab-umbrel-store/blob/main/docs/private-runtime-config-migration.md
 dependencies: []
 path: ""
 defaultUsername: ""
