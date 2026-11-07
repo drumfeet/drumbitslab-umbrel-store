@@ -4,7 +4,7 @@ name: Atlas Almanac Collector
 tagline: Collect and publish data for Atlas Almanac
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-atlas-almanac-collector/icon.svg
 category: Utilities
-version: "0.5.2"
+version: "0.5.3"
 port: 3221
 description: >-
   Requires an AMD64 Umbrel device.
@@ -21,10 +21,12 @@ repo: https://github.com/drumfeet/atlas-almanac-collector
 support: https://github.com/drumfeet/atlas-almanac-collector/issues
 gallery: []
 releaseNotes: >-
-  Fixes bond collection across daylight-saving changes using the verified New York session.
-  Preserves original source timestamps and rejects mismatched tenor bars.
-  Keeps the existing alert window, publication receipts and history.
-  Recovery after winter collection requires this version or a newer compatible version.
+  Moves watchlist symbols and planning levels into private runtime configuration. Export and
+  restore the watchlist before upgrading an existing installation. An intentional empty
+  watchlist skips watchlist alerts while collection and refresh continue. Preserves
+  schedules, publication receipts, archives, credentials and the verified bond contract.
+  Migration instructions:
+  https://github.com/drumfeet/drumbitslab-umbrel-store/blob/main/docs/private-runtime-config-migration.md
 dependencies: []
 path: ""
 defaultUsername: ""

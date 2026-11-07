@@ -1,29 +1,36 @@
 # drumbitsLab
 
-This is the owner-controlled Umbrel Community App Store for drumbitsLab apps. It publishes Visual Status Checker and Pricewatch from public, digest-pinned GitHub Container Registry images. The images are public so umbrelOS can pull them without GitHub credentials.
+This is the owner-controlled Umbrel Community App Store for drumbitsLab apps. Its apps use public, digest-pinned GitHub Container Registry images. The images are public so umbrelOS can pull them without GitHub credentials.
 
 Add `https://github.com/drumfeet/drumbitslab-umbrel-store` in umbrelOS under **Community App Stores**. Updates are discovered from this repository and are applied from Umbrel's app update interface.
 
 ## Adding an app
 
-Add each app in its own top-level directory. Every app needs an `umbrel-app.yml` manifest and a `docker-compose.yml` file that references its own public, digest-pinned multi-architecture image. Keep app IDs stable after installation so Umbrel can continue to identify and update existing apps.
+Add each app in its own top-level directory. Every app needs an `umbrel-app.yml` manifest and a `docker-compose.yml` file that references its own public, digest-pinned image for its declared architectures. Pricewatch, Atlas Almanac Collector and Visual Status Checker currently support Linux AMD64 only. Keep app IDs stable after installation so Umbrel can continue to identify and update existing apps.
 
 ## Releasing Visual Status Checker
 
 1. Update the release version and notes in `drumfeet/visualstatuscheck`, validate it, and push its matching `v<version>` tag.
 2. Wait for the source repository's image-publishing workflow to succeed, then download its `image-digest` artifact.
 3. In `drumfeet-visual-status-checker/`, update `umbrel-app.yml` with the same version and release notes. Update `docker-compose.yml` to the exact `ghcr.io/drumfeet/visual-status-checker:<version>@<digest>` image reference.
-4. Commit and push this store repository. umbrelOS will discover the update; apply it from the installed app's update interface.
+4. Open a catalog pull request and wait for its required validation and review. Complete any required private configuration migration before offering an update to an existing installation. After a separately authorized merge, apply the update from Umbrel's installed-app interface.
 
 Never publish a mutable tag without its sha256 digest. Do not place promo codes, Discord webhooks, access tokens, `.env` files, screenshots, or `/data` contents in the image or this store repository. Runtime configuration stays in the app's mounted `/data` directory.
+
+## Private runtime configuration releases
+
+Pricewatch 0.1.43, Atlas Almanac Collector 0.5.3 and Visual Status Checker 0.1.21 use private runtime preset files. Existing installations need their preserved configuration staged before updating. Fresh installations start empty. The [migration plan](docs/private-runtime-config-migration.md) describes backup, rehearsal, settings preservation and rollback. Personal exports and runtime files stay outside this public repository.
+
+The images are already published. Preparing a catalog PR does not merge the changes or update an installed app. See the [verified release pins](docs/releases/2026-11-07-private-runtime.md) for source commits, workflow evidence and immutable images.
 
 ## Visual Status Checker release record
 
 | Version | Image published | Source commit | Published image digest | Architecture |
 | --- | --- | --- | --- | --- |
+| `0.1.21` | 2026-11-07 | [`b6cbcd2`](https://github.com/drumfeet/visualstatuscheck/commit/b6cbcd2ffd4ff7f603ff508df008cc832c865553) | `sha256:eb66b958a168320ffd9ee8f7654e0ffd857f8893498d0c3b7c588b72b4e49f89` | `linux/amd64` |
 | `0.1.19` | 2026-10-29 | [`e461b03`](https://github.com/drumfeet/visualstatuscheck/commit/e461b03c42b36121aec2c7141a0dfb68c51596ff) | `sha256:9d3561f720c0cdc923d116b3be8e5254bb507e315188921701eca7ff9b261c3b` | `linux/amd64` |
 
-Tag: [`v0.1.19`](https://github.com/drumfeet/visualstatuscheck/tree/v0.1.19). The [AMD64 build and startup check](https://github.com/drumfeet/visualstatuscheck/actions/runs/40874431380) and [image publication](https://github.com/drumfeet/visualstatuscheck/actions/runs/40875400616) passed. Anonymous registry access, the published digest, and the AMD64-only image platform were verified. No Visual Status Checker app was installed on the owner's Umbrel device at release time, so no installed-app smoke test was performed.
+Historical `0.1.19` verification. Tag: [`v0.1.19`](https://github.com/drumfeet/visualstatuscheck/tree/v0.1.19). The [AMD64 build and startup check](https://github.com/drumfeet/visualstatuscheck/actions/runs/40874431380) and [image publication](https://github.com/drumfeet/visualstatuscheck/actions/runs/40875400616) passed. Anonymous registry access, the published digest, and the AMD64-only image platform were verified. No Visual Status Checker app was installed on the owner's Umbrel device at release time, so no installed-app smoke test was performed.
 
 ## Public-store safeguards
 
