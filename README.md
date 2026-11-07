@@ -27,6 +27,12 @@ Tag: [`v0.1.19`](https://github.com/drumfeet/visualstatuscheck/tree/v0.1.19). Th
 
 ## Public-store safeguards
 
+### T3 Code package update PRs
+
+`Check published T3 package updates` runs Mondays at 08:47 UTC (09:47 Madrid in winter, 10:47 in summer), or on manual dispatch after a release. It checks anonymous GHCR access, manifest/config digests, AMD64 compatibility and source/version/revision labels, then prepares one review PR for `drumfeet-t3code` when a newer stable package tag exists. The T3 source release pipeline publishes tagged images only after container checks and the image audit pass. Runtime nightly tags are not catalog package versions. Existing open bot PRs are preserved. New PRs get an explicit read-only validation dispatch because token-generated pushes do not trigger normal push workflows.
+
+No automatic approval, merge, or Umbrel installation is enabled. Review the source release and store PR, merge it through the existing review policy, and install using Umbrel's Update button. The catalog workflow has no Umbrel credentials or private-source access; it only reads the published public image and writes this store's PR branch. Failures appear in GitHub Actions. The temporary token needs repository contents, PR creation, and workflow dispatch permissions.
+
 `main` is protected: store changes require a pull request, one approval, and a successful **Validate public catalog** check. The check rejects tracked `.env` files plus runtime directories such as `data/`, `local-data/`, `artifacts/`, and `screenshots/`. GitHub secret scanning and push protection provide an additional safeguard, but maintainers must still review every release diff before merging.
 
 Run `./scripts/verify-public-catalog.sh` and `python3 -B -m unittest discover -s tests -p 'test_*.py' -v` to check the catalog and its guard locally. The tests use disposable Git indexes and require only Python 3 and Git. Fixtures force-stage synthetic files and bound Git discovery to their temporary root, so global ignore rules and ancestor checkouts cannot change the results. They cover allowed sources, blocked runtime files, filenames containing spaces or newlines, and Git failures. The guard refuses publication if it cannot list tracked files.
