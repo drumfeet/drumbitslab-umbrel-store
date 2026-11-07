@@ -4,7 +4,7 @@ services:
       APP_HOST: drumfeet-t3code_server_1
       APP_PORT: 3000
   server:
-    image: ghcr.io/drumfeet/t3code-umbrel:0.1.0@sha256:563e636bb1b9f3bbfafe118d418eeae746a1d75da07ccc306078e763670d6209
+    image: ghcr.io/drumfeet/t3code-umbrel:0.1.1@sha256:dc03013b3fde79ba153179e3160b2802f47e0b8a21760ed938f22ae36437787d
     restart: on-failure
     stop_grace_period: 45s
     ports:
