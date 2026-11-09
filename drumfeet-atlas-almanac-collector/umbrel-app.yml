@@ -4,7 +4,7 @@ name: Atlas Almanac Collector
 tagline: Collect and publish data for Atlas Almanac
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-atlas-almanac-collector/icon.svg
 category: Utilities
-version: "0.5.7"
+version: "0.5.9"
 port: 3221
 description: >-
   Requires an AMD64 Umbrel device.
@@ -21,13 +21,11 @@ repo: https://github.com/drumfeet/atlas-almanac-collector
 support: https://github.com/drumfeet/atlas-almanac-collector/issues
 gallery: []
 releaseNotes: >-
-  Recovers a missed Cloudflare Pages deployment from the saved market publication,
-  with one recorded recovery request and the existing daily report identity.
-  Configure an Atlas-account Cloudflare Pages Edit token in the dashboard to activate
-  recovery. Preserves your private watchlist, schedules, credentials, publication
-  history and report receipts. No collection or report replay is required.
-  Release and upgrade notes:
-  https://github.com/drumfeet/drumbitslab-umbrel-store/blob/main/docs/releases/2026-11-09-atlas-0.5.7.md
+  Keeps private build-event details out of public image metadata and adds sanitized
+  diagnostic-upload timing to help investigate timeouts. Preserves your private
+  watchlist, credentials, schedules, archives and report/recovery receipts.
+  No settings migration is required from 0.5.7. Release and upgrade notes:
+  https://github.com/drumfeet/drumbitslab-umbrel-store/blob/main/docs/releases/2026-11-09-atlas-0.5.9.md
 dependencies: []
 path: ""
 defaultUsername: ""
