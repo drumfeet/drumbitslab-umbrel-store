@@ -1,8 +1,8 @@
 {
-  "version": "0.1.1",
-  "sourceCommit": "de511f8a21c081d134d5c8ec6dabdbc23bcd1222",
-  "sourceTag": "v0.1.1",
-  "image": "ghcr.io/drumfeet/t3code-umbrel:0.1.1@sha256:dc03013b3fde79ba153179e3160b2802f47e0b8a21760ed938f22ae36437787d",
+  "version": "0.1.2-rc.1",
+  "sourceCommit": "8e0ecdd74663d7236f016122f81071b6e3975521",
+  "sourceTag": "v0.1.2-rc.1",
+  "image": "ghcr.io/drumfeet/t3code-umbrel:0.1.2-rc.1@sha256:19f7cb9c286525370aa630bde812751a7646c6f395a1a3d660fa0a3d47294ed5",
   "platforms": [
     "linux/amd64"
   ],
