@@ -14,6 +14,18 @@ class T3UpdateTests(unittest.TestCase):
         self.assertEqual(update.latest_tag(['0.1.9', '0.1.10', '0.1.11-nightly', 'latest', 'untrusted'], '0.1.0'), '0.1.10')
         self.assertIsNone(update.latest_tag(['0.1.0', '0.0.9'], '0.1.0'))
 
+    def test_manual_prerelease_catalog_only_advances_to_stable_packages(self):
+        current = '0.1.2-rc.1'
+        candidates = ['0.1.0', '0.1.1', '0.1.2-rc.2', '0.1.3-rc.1', 'latest']
+        self.assertIsNone(update.latest_tag(candidates, current))
+        self.assertEqual(update.latest_tag(candidates + ['0.1.2'], current), '0.1.2')
+        self.assertEqual(update.latest_tag(candidates + ['0.1.2', '0.1.3'], current), '0.1.3')
+
+    def test_rejects_malformed_current_prerelease_versions(self):
+        for current in ['invalid', '0.1.2-', '0.1.2-rc..1', '0.1.2-rc.01', '0.1.2-rc_1']:
+            with self.subTest(current=current), self.assertRaises(ValueError):
+                update.latest_tag(['0.1.2'], current)
+
     def test_rejects_untrusted_source_mismatched_version_and_wrong_architecture(self):
         config = {'os': 'linux', 'architecture': 'amd64', 'config': {'Labels': {
             'org.opencontainers.image.source': update.SOURCE,

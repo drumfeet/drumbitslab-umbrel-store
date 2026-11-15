@@ -21,7 +21,17 @@ def version_key(value):
 
 
 def latest_tag(tags, current):
-    candidates = [tag for tag in tags if VERSION.fullmatch(tag) and version_key(tag) > version_key(current)]
+    core, separator, prerelease = current.partition('-')
+    current_key = version_key(core)
+    if separator and (not re.fullmatch(r'[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*', prerelease) or
+                      any(part.isdigit() and len(part) > 1 and part.startswith('0')
+                          for part in prerelease.split('.'))):
+        raise ValueError('Invalid current prerelease version')
+    # A manually selected RC may advance to the final release of its core.
+    # Discovered candidates remain stable-only; never select another RC here.
+    candidates = [tag for tag in tags if VERSION.fullmatch(tag) and
+                  (version_key(tag) > current_key or
+                   (separator and version_key(tag) == current_key))]
     return max(candidates, key=version_key) if candidates else None
 
 
