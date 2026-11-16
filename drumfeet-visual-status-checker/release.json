@@ -1,7 +1,7 @@
 {
-  "image": "ghcr.io/drumfeet/visual-status-checker:0.1.21@sha256:eb66b958a168320ffd9ee8f7654e0ffd857f8893498d0c3b7c588b72b4e49f89",
-  "tag": "0.1.21",
-  "digest": "sha256:eb66b958a168320ffd9ee8f7654e0ffd857f8893498d0c3b7c588b72b4e49f89",
+  "image": "ghcr.io/drumfeet/visual-status-checker:0.1.22@sha256:63db052137d6423e17b30fc5c70f55efbeacaaa5f45f27239d3a7481f671f8e0",
+  "tag": "0.1.22",
+  "digest": "sha256:63db052137d6423e17b30fc5c70f55efbeacaaa5f45f27239d3a7481f671f8e0",
   "anonymous_pull": true,
   "registry_tag_digest_matches_artifact": true,
   "manifest_bytes_digest_verified": true,
@@ -11,12 +11,12 @@
       "architecture": "amd64"
     }
   ],
-  "source_commit": "b6cbcd2ffd4ff7f603ff508df008cc832c865553",
-  "publish_run": 42396206304,
-  "validated_source_run": 42390752698,
-  "source_tag": "v0.1.21",
-  "source_pull_request": "https://github.com/drumfeet/visualstatuscheck/pull/16",
-  "rollback_image": "ghcr.io/drumfeet/visual-status-checker:0.1.20@sha256:aa620b4547bdf1a536b70a22bbf8a1d1a9921a9f4f63c3416a39801ca9262043",
-  "validated_image_run": 42386484888,
-  "privacy_audit_run": 42395091046
+  "source_commit": "db04226da02b0fe2ec8f80d4765f9cc3cd8bf574",
+  "publish_run": 43814721144,
+  "validated_source_run": 43811552432,
+  "source_tag": "v0.1.22",
+  "source_pull_request": "https://github.com/drumfeet/visualstatuscheck/pull/19",
+  "rollback_image": "ghcr.io/drumfeet/visual-status-checker:0.1.21@sha256:eb66b958a168320ffd9ee8f7654e0ffd857f8893498d0c3b7c588b72b4e49f89",
+  "validated_image_run": 43814721144,
+  "verified_on": "2026-11-16"
 }

@@ -23,10 +23,15 @@ Pricewatch 0.1.43, Atlas Almanac Collector 0.5.3 and Visual Status Checker 0.1.2
 
 The images are already published. Preparing a catalog PR does not merge the changes or update an installed app. See the [verified release pins](docs/releases/2026-11-07-private-runtime.md) for source commits, workflow evidence and immutable images.
 
+## Browser maintenance releases
+
+The [November 16 browser maintenance release pins](docs/releases/2026-11-16-browser-maintenance.md) record Pricewatch 0.1.44 and Visual Status Checker 0.1.22, their successful source release workflows and verified AMD64 images. Catalog changes require review and do not update installed apps. Existing installations that have not completed private runtime preset migration still require that migration before an update.
+
 ## Visual Status Checker release record
 
 | Version | Image published | Source commit | Published image digest | Architecture |
 | --- | --- | --- | --- | --- |
+| `0.1.22` | 2026-11-16 | [`db04226`](https://github.com/drumfeet/visualstatuscheck/commit/db04226da02b0fe2ec8f80d4765f9cc3cd8bf574) | `sha256:63db052137d6423e17b30fc5c70f55efbeacaaa5f45f27239d3a7481f671f8e0` | `linux/amd64` |
 | `0.1.21` | 2026-11-07 | [`b6cbcd2`](https://github.com/drumfeet/visualstatuscheck/commit/b6cbcd2ffd4ff7f603ff508df008cc832c865553) | `sha256:eb66b958a168320ffd9ee8f7654e0ffd857f8893498d0c3b7c588b72b4e49f89` | `linux/amd64` |
 | `0.1.19` | 2026-10-29 | [`e461b03`](https://github.com/drumfeet/visualstatuscheck/commit/e461b03c42b36121aec2c7141a0dfb68c51596ff) | `sha256:9d3561f720c0cdc923d116b3be8e5254bb507e315188921701eca7ff9b261c3b` | `linux/amd64` |
 
