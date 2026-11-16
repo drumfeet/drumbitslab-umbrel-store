@@ -4,7 +4,7 @@ name: Atlas Almanac Collector
 tagline: Collect and publish data for Atlas Almanac
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-atlas-almanac-collector/icon.svg
 category: Utilities
-version: "0.5.9"
+version: "0.5.11"
 port: 3221
 description: >-
   Requires an AMD64 Umbrel device.
@@ -21,11 +21,11 @@ repo: https://github.com/drumfeet/atlas-almanac-collector
 support: https://github.com/drumfeet/atlas-almanac-collector/issues
 gallery: []
 releaseNotes: >-
-  Keeps private build-event details out of public image metadata and adds sanitized
-  diagnostic-upload timing to help investigate timeouts. Preserves your private
-  watchlist, credentials, schedules, archives and report/recovery receipts.
-  No settings migration is required from 0.5.7. Release and upgrade notes:
-  https://github.com/drumfeet/drumbitslab-umbrel-store/blob/main/docs/releases/2026-11-09-atlas-0.5.9.md
+  Raises the shared private archive allowance to 2 GiB and shows the raw-stock
+  allowance separately. Keeps the existing local storage limits, credentials,
+  schedules, histories and recovery receipts. Uses Debian 13 with the same Node
+  version. No settings migration is required from 0.5.9. Release and upgrade notes:
+  https://github.com/drumfeet/drumbitslab-umbrel-store/blob/main/docs/releases/2026-11-16-atlas-0.5.11.md
 dependencies: []
 path: ""
 defaultUsername: ""
