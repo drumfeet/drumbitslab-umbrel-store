@@ -4,7 +4,7 @@ name: Atlas Almanac Collector
 tagline: Collect and publish data for Atlas Almanac
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-atlas-almanac-collector/icon.svg
 category: Utilities
-version: "0.5.12"
+version: "0.5.13"
 port: 3221
 description: >-
   Requires an AMD64 Umbrel device.
@@ -21,11 +21,12 @@ repo: https://github.com/drumfeet/atlas-almanac-collector
 support: https://github.com/drumfeet/atlas-almanac-collector/issues
 gallery: []
 releaseNotes: >-
-  Collects MGENR under its current symbol while preserving SPNEC history and
-  completed runs. Distinguishes unavailable provider symbols from empty history
-  windows in future captures. Existing settings and collection schedules are
-  retained. Upgrade and rollback notes:
-  https://github.com/drumfeet/drumbitslab-umbrel-store/blob/main/docs/releases/2026-11-17-atlas-0.5.12.md
+  Honors TradingView tool quota cooldowns across bond, stock and company collection
+  and after restarts. Keeps stock work pending during a quota block and shows the
+  retry time in the dashboard. Preserves completed archive work, credentials,
+  schedules, publication windows and the 2 GiB archive cap.
+  Upgrade notes:
+  https://github.com/drumfeet/drumbitslab-umbrel-store/blob/main/docs/releases/2026-11-18-atlas-0.5.13.md
 dependencies: []
 path: ""
 defaultUsername: ""
