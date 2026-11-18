@@ -4,7 +4,7 @@ name: Atlas Almanac Collector
 tagline: Collect and publish data for Atlas Almanac
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-atlas-almanac-collector/icon.svg
 category: Utilities
-version: "0.5.13"
+version: "0.5.14"
 port: 3221
 description: >-
   Requires an AMD64 Umbrel device.
@@ -21,12 +21,11 @@ repo: https://github.com/drumfeet/atlas-almanac-collector
 support: https://github.com/drumfeet/atlas-almanac-collector/issues
 gallery: []
 releaseNotes: >-
-  Honors TradingView tool quota cooldowns across bond, stock and company collection
-  and after restarts. Keeps stock work pending during a quota block and shows the
-  retry time in the dashboard. Preserves completed archive work, credentials,
-  schedules, publication windows and the 2 GiB archive cap.
+  Updates Node.js to 22.23.5 using a smaller runtime image.
+  Preserves TradingView quota cooldowns, pending work, credentials, schedules,
+  publication history and archives. No settings migration is required from 0.5.13.
   Upgrade notes:
-  https://github.com/drumfeet/drumbitslab-umbrel-store/blob/main/docs/releases/2026-11-18-atlas-0.5.13.md
+  https://github.com/drumfeet/drumbitslab-umbrel-store/blob/main/docs/releases/2026-11-18-atlas-0.5.14.md
 dependencies: []
 path: ""
 defaultUsername: ""
