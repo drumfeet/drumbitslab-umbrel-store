@@ -6,36 +6,23 @@ Add `https://github.com/drumfeet/drumbitslab-umbrel-store` in umbrelOS under **C
 
 ## Adding an app
 
-Add each app in its own top-level directory. Every app needs an `umbrel-app.yml` manifest and a `docker-compose.yml` file that references its own public, digest-pinned image for its declared architectures. Pricewatch, Atlas Almanac Collector and Visual Status Checker currently support Linux AMD64 only. Keep app IDs stable after installation so Umbrel can continue to identify and update existing apps.
-
-## Releasing Visual Status Checker
-
-1. Update the release version and notes in `drumfeet/visualstatuscheck`, validate it, and push its matching `v<version>` tag.
-2. Wait for the source repository's image-publishing workflow to succeed, then download its `image-digest` artifact.
-3. In `drumfeet-visual-status-checker/`, update `umbrel-app.yml` with the same version and release notes. Update `docker-compose.yml` to the exact `ghcr.io/drumfeet/visual-status-checker:<version>@<digest>` image reference.
-4. Open a catalog pull request and wait for its required validation and review. Complete any required private configuration migration before offering an update to an existing installation. After a separately authorized merge, apply the update from Umbrel's installed-app interface.
+Add each app in its own top-level directory. Every app needs an `umbrel-app.yml` manifest and a `docker-compose.yml` file that references its own public, digest-pinned image for its declared architectures. The active catalog contains Atlas Almanac Collector and T3 Code. Both currently support Linux AMD64 only. Keep app IDs stable after installation so Umbrel can continue to identify and update existing apps.
 
 Never publish a mutable tag without its sha256 digest. Do not place promo codes, Discord webhooks, access tokens, `.env` files, screenshots, or `/data` contents in the image or this store repository. Runtime configuration stays in the app's mounted `/data` directory.
 
 ## Private runtime configuration releases
 
-Pricewatch 0.1.43, Atlas Almanac Collector 0.5.3 and Visual Status Checker 0.1.21 use private runtime preset files. Existing installations need their preserved configuration staged before updating. Fresh installations start empty. The [migration plan](docs/private-runtime-config-migration.md) describes backup, rehearsal, settings preservation and rollback. Personal exports and runtime files stay outside this public repository.
+The historical private runtime releases, Pricewatch 0.1.43, Atlas Almanac Collector 0.5.3 and Visual Status Checker 0.1.21, introduced private preset files. Historical installations need their preserved configuration staged before updating. Fresh installations start empty. The [migration plan](docs/private-runtime-config-migration.md) describes backup, rehearsal, settings preservation and rollback. Personal exports and runtime files stay outside this public repository.
 
 The images are already published. Preparing a catalog PR does not merge the changes or update an installed app. See the [verified release pins](docs/releases/2026-11-07-private-runtime.md) for source commits, workflow evidence and immutable images.
 
 ## Browser maintenance releases
 
-The [November 16 browser maintenance release pins](docs/releases/2026-11-16-browser-maintenance.md) record Pricewatch 0.1.44 and Visual Status Checker 0.1.22, their successful source release workflows and verified AMD64 images. Catalog changes require review and do not update installed apps. Existing installations that have not completed private runtime preset migration still require that migration before an update.
+The [November 16 browser maintenance release pins](docs/releases/2026-11-16-browser-maintenance.md) preserve Pricewatch 0.1.44 and Visual Status Checker 0.1.22, their successful source release workflows and verified AMD64 images. These are historical records for the retired apps. Existing installations that have not completed private runtime preset migration still need that migration before any separately reviewed update.
 
-## Visual Status Checker release record
+## Retired apps
 
-| Version | Image published | Source commit | Published image digest | Architecture |
-| --- | --- | --- | --- | --- |
-| `0.1.22` | 2026-11-16 | [`db04226`](https://github.com/drumfeet/visualstatuscheck/commit/db04226da02b0fe2ec8f80d4765f9cc3cd8bf574) | `sha256:63db052137d6423e17b30fc5c70f55efbeacaaa5f45f27239d3a7481f671f8e0` | `linux/amd64` |
-| `0.1.21` | 2026-11-07 | [`b6cbcd2`](https://github.com/drumfeet/visualstatuscheck/commit/b6cbcd2ffd4ff7f603ff508df008cc832c865553) | `sha256:eb66b958a168320ffd9ee8f7654e0ffd857f8893498d0c3b7c588b72b4e49f89` | `linux/amd64` |
-| `0.1.19` | 2026-10-29 | [`e461b03`](https://github.com/drumfeet/visualstatuscheck/commit/e461b03c42b36121aec2c7141a0dfb68c51596ff) | `sha256:9d3561f720c0cdc923d116b3be8e5254bb507e315188921701eca7ff9b261c3b` | `linux/amd64` |
-
-Historical `0.1.19` verification. Tag: [`v0.1.19`](https://github.com/drumfeet/visualstatuscheck/tree/v0.1.19). The [AMD64 build and startup check](https://github.com/drumfeet/visualstatuscheck/actions/runs/40874431380) and [image publication](https://github.com/drumfeet/visualstatuscheck/actions/runs/40875400616) passed. Anonymous registry access, the published digest, and the AMD64-only image platform were verified. No Visual Status Checker app was installed on the owner's Umbrel device at release time, so no installed-app smoke test was performed.
+Pricewatch and Visual Status Checker are retired and are no longer offered in this catalog. Their final image pins, release records and complete historical package snapshots are preserved in [the retired-app record](docs/retired-apps.md). Catalog removal does not uninstall an existing app or delete its data, backups or registry images.
 
 ## Public-store safeguards
 
@@ -50,9 +37,3 @@ No automatic approval, merge, or Umbrel installation is enabled. Review the sour
 `main` is protected: store changes require a pull request, one approval, and a successful **Validate public catalog** check. The check rejects tracked `.env` files plus runtime directories such as `data/`, `local-data/`, `artifacts/`, and `screenshots/`. GitHub secret scanning and push protection provide an additional safeguard, but maintainers must still review every release diff before merging.
 
 Run `./scripts/verify-public-catalog.sh` and `python3 -B -m unittest discover -s tests -p 'test_*.py' -v` to check the catalog and its guard locally. The tests use disposable Git indexes and require only Python 3 and Git. Fixtures force-stage synthetic files and bound Git discovery to their temporary root, so global ignore rules and ancestor checkouts cannot change the results. They cover allowed sources, blocked runtime files, filenames containing spaces or newlines, and Git failures. The guard refuses publication if it cannot list tracked files.
-
-## Pricewatch
-
-Pricewatch tracks supported Klook packages and Google Flights searches, saves price history and schedules, and can send Telegram alerts for new lows. Its provider structure supports adding more sources. New monitors stay paused until started. Google Flights remains experimental and pauses on verification or consent blocks.
-
-The app uses port 3217 and persists its database and private Telegram settings under its own data volume. Back up that directory with the app stopped. Its Chromium process uses the bundled Playwright seccomp profile with browser sandboxing enabled. Umbrel renders `seccomp.json.template` into the app directory so profile updates follow its supported package-update workflow. The source repository is private; this catalog contains only installation metadata and static assets.
