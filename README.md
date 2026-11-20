@@ -6,7 +6,7 @@ Add `https://github.com/drumfeet/drumbitslab-umbrel-store` in umbrelOS under **C
 
 ## Adding an app
 
-Add each app in its own top-level directory. Every app needs an `umbrel-app.yml` manifest and a `docker-compose.yml` file that references its own public, digest-pinned image for its declared architectures. The active catalog contains Atlas Almanac Collector and T3 Code. Both currently support Linux AMD64 only. Keep app IDs stable after installation so Umbrel can continue to identify and update existing apps.
+Add each app in its own top-level directory. Every app needs an `umbrel-app.yml` manifest and a `docker-compose.yml` file that references its own public, digest-pinned image for its declared architectures. The active catalog offers Atlas Almanac Collector for Linux AMD64. Keep app IDs stable after installation so Umbrel can continue to identify and update existing apps.
 
 Never publish a mutable tag without its sha256 digest. Do not place promo codes, Discord webhooks, access tokens, `.env` files, screenshots, or `/data` contents in the image or this store repository. Runtime configuration stays in the app's mounted `/data` directory.
 
@@ -22,17 +22,9 @@ The [November 16 browser maintenance release pins](docs/releases/2026-11-16-brow
 
 ## Retired apps
 
-Pricewatch and Visual Status Checker are retired and are no longer offered in this catalog. Their final image pins, release records and complete historical package snapshots are preserved in [the retired-app record](docs/retired-apps.md). Catalog removal does not uninstall an existing app or delete its data, backups or registry images.
+Pricewatch, Visual Status Checker and T3 Code Nightly are retired. Their final image pins, release records and complete historical package snapshots are preserved in [the retired-app record](docs/retired-apps.md). Manage any existing installations and their data through Umbrel separately.
 
 ## Public-store safeguards
-
-### T3 Code package update PRs
-
-`Check published T3 package updates` runs Mondays at 08:47 UTC (09:47 Madrid in winter, 10:47 in summer), or on manual dispatch after a release. It checks anonymous GHCR access, manifest/config digests, AMD64 compatibility and source/version/revision labels, then prepares one review PR for `drumfeet-t3code` when a newer stable package tag exists. The T3 source release pipeline publishes tagged images only after container checks and the image audit pass. Runtime nightly tags are not catalog package versions. Existing open bot PRs are preserved. New PRs get an explicit read-only validation dispatch because token-generated pushes do not trigger normal push workflows.
-
-Manually reviewed release-candidate catalog PRs may use a published prerelease pin. The updater still discovers stable package tags only; after a manual RC it can select the matching final release or a later stable package. It does not automatically select newer RC tags. See the [T3 0.1.2-rc.1 release record](docs/releases/2026-11-15-t3-0.1.2-rc.1.md) for its verified image and separate runtime-activation requirements.
-
-No automatic approval, merge, or Umbrel installation is enabled. Review the source release and store PR, merge it through the existing review policy, and install using Umbrel's Update button. The catalog workflow has no Umbrel credentials or private-source access; it only reads the published public image and writes this store's PR branch. Failures appear in GitHub Actions. The temporary token needs repository contents, PR creation, and workflow dispatch permissions.
 
 `main` is protected: store changes require a pull request, one approval, and a successful **Validate public catalog** check. The check rejects tracked `.env` files plus runtime directories such as `data/`, `local-data/`, `artifacts/`, and `screenshots/`. GitHub secret scanning and push protection provide an additional safeguard, but maintainers must still review every release diff before merging.
 

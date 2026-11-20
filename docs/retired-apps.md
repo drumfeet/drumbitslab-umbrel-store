@@ -1,8 +1,8 @@
 # Retired apps
 
-Retirement of Pricewatch and Visual Status Checker was proposed on 18 November 2026 because the owner no longer uses them and their source repositories are archived. This record preserves their release identities and package history. The retirement PR removes their top-level app directories; they stop being offered after that change is reviewed and merged.
+This record preserves the release identities and package history of apps retired from the drumbitsLab catalog. Pricewatch and Visual Status Checker were retired on 18 November 2026. The T3 Code Nightly retirement also removes its scheduled catalog updater.
 
-This catalog change does not delete registry images, Git tags, source history, installed-app data or backups. It does not uninstall or stop an existing installation. Neither app was installed on the owner's Umbrel device during the retirement review. Other installations require their own retirement and data-retention decision; do not treat catalog removal as an uninstall operation.
+Catalog removal preserves registry images, Git tags and source history. Manage uninstall and data retention for existing installations through Umbrel separately.
 
 ## Final catalog packages
 
@@ -10,15 +10,19 @@ This catalog change does not delete registry images, Git tags, source history, i
 | --- | --- | --- | --- | --- |
 | Pricewatch | `drumfeet-pricewatch` | `0.1.44` | [Archived repository](https://github.com/drumfeet/pricewatch) | [Complete package snapshot](https://github.com/drumfeet/drumbitslab-umbrel-store/tree/c4b81f2cb2c07cfa16cf6279b75f819c15795205/drumfeet-pricewatch) |
 | Visual Status Checker | `drumfeet-visual-status-checker` | `0.1.22` | [Archived repository](https://github.com/drumfeet/visualstatuscheck) | [Complete package snapshot](https://github.com/drumfeet/drumbitslab-umbrel-store/tree/c4b81f2cb2c07cfa16cf6279b75f819c15795205/drumfeet-visual-status-checker) |
+| T3 Code Nightly | `drumfeet-t3code` | `0.1.2-rc.1` | [Source repository](https://github.com/drumfeet/t3code-umbrel) | [Complete package snapshot](https://github.com/drumfeet/drumbitslab-umbrel-store/tree/66742cbd6157213c0f006001be74dce57784a3f8/drumfeet-t3code) |
 
 The pinned snapshots retain the original manifests, Compose files, hooks, AppArmor/seccomp policies, licenses and static assets. Visual Status Checker's [release metadata](https://github.com/drumfeet/drumbitslab-umbrel-store/blob/c4b81f2cb2c07cfa16cf6279b75f819c15795205/drumfeet-visual-status-checker/release.json) remains available at that immutable commit. No app ID was reassigned.
 
 ```text
 ghcr.io/drumfeet/pricewatch:0.1.44@sha256:a6abc6ed7cfc3beace3b3b7d63aaf9012a1f88263ea293d5499ab1301c438dd5
 ghcr.io/drumfeet/visual-status-checker:0.1.22@sha256:63db052137d6423e17b30fc5c70f55efbeacaaa5f45f27239d3a7481f671f8e0
+ghcr.io/drumfeet/t3code-umbrel:0.1.2-rc.1@sha256:19f7cb9c286525370aa630bde812751a7646c6f395a1a3d660fa0a3d47294ed5
 ```
 
 These are the final catalog references, not instructions to install unsupported apps. No registry image, package, digest or tag is removed by the retirement PR. The [November 16 release record](releases/2026-11-16-browser-maintenance.md) retains the source commits, publication/test workflows and previous recovery pins. The [November 7 release record](releases/2026-11-07-private-runtime.md) retains earlier releases and image identities. The [private runtime migration guide](private-runtime-config-migration.md) remains for historical installations and recovery planning. None of these documents substitutes for a current private data backup or a rehearsed restoration.
+
+The [T3 Code 0.1.2-rc.1 release record](releases/2026-11-15-t3-0.1.2-rc.1.md) preserves the source commit, release tag and AMD64 image verification.
 
 ## Visual Status Checker release record
 
