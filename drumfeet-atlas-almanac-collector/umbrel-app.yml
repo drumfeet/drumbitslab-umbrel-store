@@ -4,15 +4,14 @@ name: Atlas Almanac Collector
 tagline: Collect and publish data for Atlas Almanac
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-atlas-almanac-collector/icon.svg
 category: Utilities
-version: "0.5.15"
+version: "0.5.16"
 port: 3221
 description: >-
   Requires an AMD64 Umbrel device.
-  Collect Philippine bond yields from TradingView and publish validated snapshots to Atlas Almanac.
-  Runs at 17:20 New York time on weekdays, 21:20 or 22:20 UTC, with bounded retries and publication checks.
-  Keeps credentials on your Umbrel and shows connection, schedule and publication status.
-  Uses the owner's Cloudflare Access-protected HTTPS hostname and a repository-scoped GitHub token.
-  Scheduling starts paused. Telegram and Viber delivery remains in Atlas Almanac.
+  Collects daily prices for 283 Philippine stock listings using Phisix with a PSEye fallback.
+  Reads six Philippine government bond yields from TradingView.
+  Publishes current values to private R2 storage for Atlas Almanac and its Telegram and Viber reports.
+  Credentials and schedule controls stay on Umbrel.
 developer: DrumbitsLab
 website: https://github.com/drumfeet/atlas-almanac-collector
 submitter: DrumbitsLab
@@ -21,11 +20,11 @@ repo: https://github.com/drumfeet/atlas-almanac-collector
 support: https://github.com/drumfeet/atlas-almanac-collector/issues
 gallery: []
 releaseNotes: >-
-  Publishes daily PSE quotes from Phisix for the 283-listing universe, with a PSEye fallback.
-  Retires scheduled stock candle collection and TradingView company refreshes.
-  Existing archives, bond collection, PSEye metrics, dividends and daily alerts are preserved.
+  Replaces the current stock and bond snapshots after validation.
+  Daily reports include yields and their day-over-day changes.
+  Before upgrading, seed both snapshots and verify the public data URLs.
   Upgrade notes
-  https://github.com/drumfeet/drumbitslab-umbrel-store/blob/main/docs/releases/2026-11-20-atlas-0.5.15.md
+  https://github.com/drumfeet/drumbitslab-umbrel-store/blob/main/docs/releases/2026-11-21-atlas-0.5.16.md
 dependencies: []
 path: ""
 defaultUsername: ""
