@@ -4,7 +4,7 @@ name: Atlas Almanac Collector
 tagline: Collect and publish data for Atlas Almanac
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-atlas-almanac-collector/icon.svg
 category: Utilities
-version: "0.5.16"
+version: "0.5.17"
 port: 3221
 description: >-
   Requires an AMD64 Umbrel device.
@@ -20,11 +20,10 @@ repo: https://github.com/drumfeet/atlas-almanac-collector
 support: https://github.com/drumfeet/atlas-almanac-collector/issues
 gallery: []
 releaseNotes: >-
-  Replaces the current stock and bond snapshots after validation.
-  Daily reports include yields and their day-over-day changes.
-  Before upgrading, seed both snapshots and verify the public data URLs.
+  Publishes the latest stock and bond snapshots through the existing Atlas Worker.
+  Configure the publication credential on both services before switching transports.
   Upgrade notes
-  https://github.com/drumfeet/drumbitslab-umbrel-store/blob/main/docs/releases/2026-11-21-atlas-0.5.16.md
+  https://github.com/drumfeet/drumbitslab-umbrel-store/blob/main/docs/releases/2026-11-22-atlas-0.5.17.md
 dependencies: []
 path: ""
 defaultUsername: ""
