@@ -4,7 +4,7 @@ name: Atlas Almanac Collector
 tagline: Collect and publish data for Atlas Almanac
 icon: https://raw.githubusercontent.com/drumfeet/drumbitslab-umbrel-store/main/drumfeet-atlas-almanac-collector/icon.svg
 category: Utilities
-version: "0.5.17"
+version: "0.5.18"
 port: 3221
 description: >-
   Requires an AMD64 Umbrel device.
@@ -20,10 +20,13 @@ repo: https://github.com/drumfeet/atlas-almanac-collector
 support: https://github.com/drumfeet/atlas-almanac-collector/issues
 gallery: []
 releaseNotes: >-
-  Publishes the latest stock and bond snapshots through the existing Atlas Worker.
-  Configure the publication credential on both services before switching transports.
-  Upgrade notes
-  https://github.com/drumfeet/drumbitslab-umbrel-store/blob/main/docs/releases/2026-11-22-atlas-0.5.17.md
+  When a provider page goes missing, the Collector keeps confirmed dividend
+  history, including a report of no payouts. If the cache and the last publication
+  both contain confirmed histories, it uses the one fetched more recently.
+  It also checks that the payout count for the past 12 months agrees with
+  the latest ex-dividend date.
+  Release notes
+  https://github.com/drumfeet/drumbitslab-umbrel-store/blob/main/docs/releases/2026-11-26-atlas-0.5.18.md
 dependencies: []
 path: ""
 defaultUsername: ""
