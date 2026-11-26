@@ -16,5 +16,8 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - run: ./scripts/verify-public-catalog.sh
-      - name: Test catalog publication guard
-        run: python3 -B -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Test publication guard and installable app packages
+        run: |
+          python3 -m venv "$RUNNER_TEMP/catalog-tests"
+          "$RUNNER_TEMP/catalog-tests/bin/python" -m pip install -r tests/requirements.txt
+          "$RUNNER_TEMP/catalog-tests/bin/python" -B -m unittest discover -s tests -p 'test_*.py' -v
