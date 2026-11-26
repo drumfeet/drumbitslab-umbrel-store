@@ -26,9 +26,9 @@ Pricewatch, Visual Status Checker and T3 Code Nightly are retired. Their final i
 
 ## Public-store safeguards
 
-`main` is protected: store changes require a pull request, one approval, and a successful **Validate public catalog** check. The check rejects tracked `.env` files plus runtime directories such as `data/`, `local-data/`, `artifacts/`, and `screenshots/`. GitHub secret scanning and push protection provide an additional safeguard, but maintainers must still review every release diff before merging.
+`main` requires a pull request, one approval, and a successful **Validate public catalog** check. The guard rejects tracked environment files and the Collector's `tunnel/token` credential path. It allows `.env.example` outside the runtime directories `data/`, `local-data/`, `artifacts/`, and `screenshots/`. The guard rejects every file under those directories. GitHub secret scanning and push protection provide an additional safeguard, but maintainers must still review every release diff before merging.
 
-Run the same checks locally before opening a catalog PR.
+Stage the intended catalog changes and run these checks before pushing the branch to this public repository.
 
 ```sh
 ./scripts/verify-public-catalog.sh
