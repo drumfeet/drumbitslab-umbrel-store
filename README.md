@@ -28,4 +28,16 @@ Pricewatch, Visual Status Checker and T3 Code Nightly are retired. Their final i
 
 `main` is protected: store changes require a pull request, one approval, and a successful **Validate public catalog** check. The check rejects tracked `.env` files plus runtime directories such as `data/`, `local-data/`, `artifacts/`, and `screenshots/`. GitHub secret scanning and push protection provide an additional safeguard, but maintainers must still review every release diff before merging.
 
-Run `./scripts/verify-public-catalog.sh` and `python3 -B -m unittest discover -s tests -p 'test_*.py' -v` to check the catalog and its guard locally. The tests use disposable Git indexes and require only Python 3 and Git. Fixtures force-stage synthetic files and bound Git discovery to their temporary root, so global ignore rules and ancestor checkouts cannot change the results. They cover allowed sources, blocked runtime files, filenames containing spaces or newlines, and Git failures. The guard refuses publication if it cannot list tracked files.
+Run the same checks locally before opening a catalog PR.
+
+```sh
+./scripts/verify-public-catalog.sh
+python3 -m venv ~/.venvs/drumbitslab-catalog
+. ~/.venvs/drumbitslab-catalog/bin/activate
+python -m pip install -r tests/requirements.txt
+python -B -m unittest discover -s tests -p 'test_*.py' -v
+```
+
+The publication guard tests use disposable Git indexes. Fixtures force-stage synthetic files and bound Git discovery to their temporary root, so global ignore rules and ancestor checkouts cannot change the results. They cover allowed sources, blocked runtime files, filenames containing spaces or newlines, and Git failures. The guard refuses publication if it cannot list tracked files.
+
+The package tests use PyYAML to read the actual catalog. They check the store identity, app IDs and release metadata, immutable service image references, and the matching Atlas web and data-initialization images. Release verification still requires checking the published digest and supported architectures in the registry.
