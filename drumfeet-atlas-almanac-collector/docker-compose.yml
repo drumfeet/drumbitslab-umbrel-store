@@ -4,7 +4,7 @@ services:
       APP_HOST: drumfeet-atlas-almanac-collector_web_1
       APP_PORT: 3220
   data_init:
-    image: ghcr.io/drumfeet/atlas-almanac-collector:0.5.19@sha256:249a2f711a21ace3a4750af19a9acb2b417d0990a4da0a8492a6928cfadca72f
+    image: ghcr.io/drumfeet/atlas-almanac-collector:0.5.20@sha256:20d47842562f730b45736b74378265b2fd585b141de72ef7ce90f6cb086e9b1d
     user: "0:0"
     restart: "no"
     entrypoint: ["sh", "-c", "chown 1000:1000 /data && chmod 700 /data"]
@@ -15,7 +15,7 @@ services:
     cap_add: [CHOWN, FOWNER, DAC_OVERRIDE]
     security_opt: [no-new-privileges:true]
   web:
-    image: ghcr.io/drumfeet/atlas-almanac-collector:0.5.19@sha256:249a2f711a21ace3a4750af19a9acb2b417d0990a4da0a8492a6928cfadca72f
+    image: ghcr.io/drumfeet/atlas-almanac-collector:0.5.20@sha256:20d47842562f730b45736b74378265b2fd585b141de72ef7ce90f6cb086e9b1d
     depends_on:
       data_init:
         condition: service_completed_successfully
@@ -30,7 +30,7 @@ services:
     cap_drop: [ALL]
     security_opt: [no-new-privileges:true]
   tunnel:
-    image: cloudflare/cloudflared:2026.10.3@sha256:faa8e0a1475f137c910be6025f43c8e4092fdd35461b31e19fd1390657a1ff39
+    image: cloudflare/cloudflared:2026.11.2@sha256:55c7e3e8d89d5e8d20b75a82f3602cbf98e06db406e73e282073cfdc5a9a3af6
     user: "1000:1000"
     command: ["tunnel", "--no-autoupdate", "--loglevel", "warn", "run", "--token-file", "/tunnel/token"]
     restart: on-failure
