@@ -49,7 +49,7 @@ class PublicCatalogTests(unittest.TestCase):
         self.track(
             "umbrel-app-store.yml", "app/umbrel-app.yml", "app/docker-compose.yml",
             ".env.example", "app/.env.example", "docs/a file.txt",
-            "docs/line\nbreak.txt", "app/database/README.md",
+            "docs/line\nbreak.txt", "app/database/README.md", "app/tunnel/README.md",
         )
         result = self.guard()
         self.assertEqual(result.returncode, 0, result.stderr)
@@ -60,7 +60,9 @@ class PublicCatalogTests(unittest.TestCase):
             ".env", ".env.production", "app/.env.local", "data/state.json",
             "app/local-data/state.json", "artifacts/log.txt",
             "app/screenshots/page.png", "app/data/a file.txt",
-            "app/data/line\nbreak.txt",
+            "app/data/line\nbreak.txt", "data/.env.example",
+            "app/local-data/nested/.env.example", "artifacts/.env.example",
+            "app/screenshots/.env.example", "tunnel/token", "app/tunnel/token",
         ):
             with self.subTest(name=name):
                 self.track(name)

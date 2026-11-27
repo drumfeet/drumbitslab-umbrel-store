@@ -9,9 +9,12 @@ git ls-files -z > "$tracked_files"
 blocked=()
 while IFS= read -r -d '' path; do
   case "/$path/" in
+    */data/*|*/local-data/*|*/artifacts/*|*/screenshots/*|*/tunnel/token/)
+      blocked+=("$path")
+      ;;
     */.env.example/)
       ;;
-    */.env/|*/.env.*/*|*/data/*|*/local-data/*|*/artifacts/*|*/screenshots/*)
+    */.env/|*/.env.*/*)
       blocked+=("$path")
       ;;
   esac
